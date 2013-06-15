@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Ejemplo de selector de clases</title>
+
+		<!-- se definen las reglas de CSS -->
+		<style type="text/css" >
+			/*
+			 La siguiente regla hace que SOLO las etiquetas marcadas con
+			 el atributo class="texto-rojo" tengan texto de color rojo
+
+			 NOTE que los selectores de clase SIEMPRE empiezan con un punto
+			 */
+			.texto-rojo {
+				color: red;
+			}
+
+		</style>
+
+	</head>
+	<body>
+		
+		<!-- solo titulo 1 y titulo 2 son de clase texto-rojo -->
+		<h1 class="texto-rojo">Titulo 1</h1>
+		<h1>Titulo 2</h1>
+		<h1 class="texto-rojo">Titulo 3</h1>
+
+        <!-- NOTESE QUE SE PUEDEN AGRUPAR ETIQUETAS DIFERENTES BAJO LA MISMA CLASE -->
+		<p class="texto-rojo">
+			El texto del parrafo 2
+		</p>
+
+		<p >
+			El texto del parrafo 1
+		</p>
+	</body>
+</html>
