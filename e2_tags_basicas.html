@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo de tags basicas</title>
+		<!-- se indica el encoding que estamos usando -->
+		<meta charset="utf-8" />
+	</head>
+	<body >
+		<!--
+		EJEMPLO DE HEADERS, h1 muestra un texto mas grande, h2 es mas pequeno y asi
+		sucesivamente,
+		-->
+		<h1>Este es un encabezado o titulo, en html se les llama "header"</h1>
+		<h2>Este es un header h2</h2>
+		<h3>Este es un header h3</h3>
+
+		<!-- EJEMPLO DE CREACION DE PARRAFO -->
+		<p>
+			Este es un parrafo de html, notese que el texto es mas pequeño que los headers h1, h2, h3
+		</p>
+		<p>
+			Este es OTRO parrafo
+		</p>
+
+		<span>Este es un span</span>
+		<span>Este es un OTRO span</span>
+
+		<!--
+		EJEMPLO DE IMAGENES, el atributo "src" indica de donde se obtiene el archivo
+		de la imagen.
+		-->
+		<!-- si la imagen es de un servidor externo -->
+		<img src="http://www.vendingvalencia.com/index_archivos/image2114.jpg" />
+		<!-- si la imagen esta en NUESTRO servidor, le indicamos la carpeta y el archivo
+		,notese que ya no se le pone http -->
+		<img src="/curso_html5_v2/imagenes/coffe.jpg" />
+		<img src="imagenes/coffe.jpg" />
+
+		<!-- EJEMPLO DE CREACION DE UNA LISTA ORDENADA(numerada) "ol"-->
+		<ol>
+			<li>
+				Primer elemento de la lista
+			</li>
+			<li>
+				Segundo elemento de la lista
+			</li>
+		</ol>
+
+		<!-- EJEMPLO DE CREACION DE UNA LISTA NO ORDENADA "ul", a diferencia de la lista
+		anterior, los elementos de la lista no aparecen numerados.
+		-->
+		<ul>
+			<li>
+				Primer elemento de la lista
+			</li>
+			<li>
+				Segundo elemento de la lista
+			</li>
+		</ul>
+
+		<ul>
+			<li>
+				Primer elemento de la lista
+			</li>
+			<li>
+				Segundo elemento de la lista
+				<ul>
+					<li>
+						Segundo, Primer elemento de la lista
+					</li>
+					<li>
+						Segundo, segundo elemento de la lista
+					</li>
+				</ul>
+
+			</li>
+			<li>
+				Tercer elemento de la lista
+			</li>
+		</ul>
+
+		<!-- EJEMPLO DE UN LINK, "href" sirve para indicarle la URL a la que queremos ir al
+		darle click -->
+		<!-- si es una pagina en OTRO SERVIDOR -->
+		<a href="http://google.com">Ir a la página de google(absoluta)</a>
+		<!-- si es una pagina en NUESTRO SERVIDOR, al igual que en "img", le indicamos el archivo
+		sin el http-->
+
+		<a href="e1_estructura_basica.html">Ir al ejemplo anterior de este curso (relativa)</a>
+		<a href="/curso_html5_v2/e1_estructura_basica.html">Ir al ejemplo anterior de este curso (relativa)</a>
+		
+		<pre>
+			Este texto
+			        se tal cual
+			                  fue escrito
+			                        en la pagina.
+		</pre>
+
+	</body>
+</html>
