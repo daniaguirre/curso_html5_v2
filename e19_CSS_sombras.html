@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo de Modificación del modelo cajas</title>
+		<style type="text/css">
+			/* usamos un selector de etiqueta */
+			p {
+				/* MODIFICANDO EL CONTENT */
+				height: 150px;
+				width: 600px;
+				color: rgb(11, 11, 11);
+				background-color: rgb(238, 238, 238);
+				background-image: url("imagenes/fondo_cuadros.jpg");
+				/* MODIFICANDO EL MARGIN (relleno)
+				 * El padding no tiene color propio, toma el color que tenga
+				 * el content, por ello no hay una propiedad
+				 * para modificar su color
+				 */
+				padding: 10px;
+				/* MODIFICANDO EL BORDER(linea alrededor del relleno)*/
+				border-style: solid;
+				/* la siguiente regla, NO TIENE EFECTO si no se cambia
+				 * border-style a un valor diferente de none
+				 */
+				border-width: 5px;
+				border-color: white;
+				/*
+				 * MODIFICANDO EL MARGIN
+				 * El margin es transparente, toma el color de la caja padre,
+				 * por ello no hay una propiedad para modificar su color
+				 */
+
+				margin: 90px;
+				/* ------------ ESQUINAS REDONDAS ---------------*/
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				-o-border-radius: 10px;
+				border-radius: 10px;
+				/*------------------ SOMBRAS ---------------------*/
+				/*sombras*/
+				-webkit-box-shadow: 0px 0px 5px 3px #333;
+				-moz-box-shadow: 0px 0px 5px 3px #333;
+				-o-box-shadow: 0px 0px 5px 3px #333;
+				box-shadow: 0px 0px 5px 3px #333;
+			}
+
+			/* el body es tambien una caja*/
+			body {
+			}
+
+		</style>
+	</head>
+	<body>
+		<p>
+			Este texto esta dentro del contenido de la caja
+		</p>
+	</body>
+</html>

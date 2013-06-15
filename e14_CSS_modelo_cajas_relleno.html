@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo de Modificación del modelo cajas</title>
+		<style type="text/css">
+			/* usamos un selector de etiqueta */
+			p {
+				/* MODIFICANDO EL CONTENT */
+				height: 150px;
+				width: 600px;
+				color: rgb(11, 11, 11);
+				background-color: rgb(238, 238, 238);
+				background-image: url("imagenes/fondo_cuadros.jpg");
+				/* MODIFICANDO EL PADDING (relleno
+				 * El padding no tiene color propio, toma el color que tenga
+				 * el content, por ello no hay una propiedad
+				 * para modificar su color
+				 */
+
+				padding: 20px;
+				/*padding-bottom:20px;*/
+				/*padding-top:20px;*/
+				/*padding-right:20px*/
+				/*padding-left: 20px;*/
+			}
+
+			/* el body es tambien una caja*/
+			body {
+				
+				
+				background-color: rgb(234,34,35);
+				background-image: url("imagenes/fondo_granulado2.png");				
+			}
+
+		</style>
+	</head>
+	<body>
+		<p>
+			Este texto esta dentro del contenido de la caja
+		</p>
+	</body>
+</html>

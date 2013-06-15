@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Ejemplo de selector de ID</title>
+
+		<!-- se definen las reglas de CSS -->
+		<style type="text/css" >
+			/*
+			 La siguiente regla hace que SOLO la etiqueta con
+			 el atributo id="titulo-principal" tenga texto rojo
+
+			 NOTE que los selectores de ID SIEMPRE empiezan con #
+			 */
+			#titulo-principal {
+				color: red;
+			}
+
+		</style>
+
+	</head>
+	<body>
+		
+		<h1 >Titulo 1</h1>
+		<!-- Esta es la única etiqueta que queremos cambiar-->
+		<h1 id="titulo-principal">Titulo 2</h1>
+		<h1 >Titulo 3</h1>
+
+		<p >
+			El texto del parrafo 1
+		</p>
+	</body>
+</html>
