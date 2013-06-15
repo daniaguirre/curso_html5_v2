@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo de elementos de bloque y línea</title>
+		<style type="text/css">
+
+		    /* 
+		     * "p" es un elemento de bloque, aqui solo se esta usando
+		     * un estilo para mostrar la caja asociada (linea negra).
+		     */		     	   
+			p{
+			   
+			    /* solo vamos a mostrar el borde de la caja*/
+				border-style:solid;				
+			    border-width:5px; 
+			    border-color:green;				    			     			   
+			}
+			
+		    /* "a" es un elemento de linea, aqui solo se esta usando
+		     * un estilo para mostrar su caja asociada (linea roja)
+		     */ 		     
+		    a{
+		    	border-style:solid;
+		    	border-width:5px;
+		    	border-color:red;
+		    }
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- elementos de bloque --->
+		<p>Este es un parrafo (un elemento de bloque)</p>
+		<p>Este es OTRO parrafo (un elemento de bloque), NOTE que el parrafo empieza UN NUEVO RENGLÓN</p>
+		
+		<!-- elemento de linea -->
+		<a href="#">Este es un link(elemento de linea)</a>
+		<a href="#">Este es otro link(elemento de linea).</a>
+		<a href="#">Ocupan SOLO el espacio necesario, no empiezan en otro renglón </a>
+	</body>
+</html>

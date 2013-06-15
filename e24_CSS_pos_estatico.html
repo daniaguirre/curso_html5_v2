@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Posicionamiento estatico</title>
+		<style type="text/css">
+
+		    /* 
+		     el borde del parrafo lo ponemos de color verde.
+		     */		     	   
+			p{
+			   
+			    /* solo vamos a mostrar el borde de la caja*/
+				border-style:solid;				
+			    border-width:5px; 
+			    border-color:green;				    			     			   
+			}
+			
+		    /* 
+		     *El borde del link lo ponemos de color rojo
+		     */ 		     
+		    a{
+		    	/* solo vamos a mostrar el borde de la caja*/
+		    	border-style:solid;
+		    	border-width:5px;
+		    	border-color:red;
+		    }
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- elementos de bloque --->
+		<p>parrafo (elemento de bloque 1). Los elementos de bloque se apilan (uno encima del otro)</p>
+		<p>parrafo (elemento de bloque 2).</p>
+		<p>parrafo (elemento de bloque 3).</p>
+		
+		<a href="#">link (elemento de linea 1). Los elementos de linea se juntan (uno al lado del otro)</a>
+		<a href="#">link (elemento de linea 2).</a>
+		<a href="#">link (elemento de linea 3).</a>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Diferencias entre DIV y p</title>
+		<style type="text/css">
+
+            /*               
+             SOLO VAMOS A MOSTRAR EL BORDE DEL DIV Y EL PARRAFO
+             NO AGREGAREMOS NINGUN MARGEN NI RELLENO.             
+            */
+
+		    /* 
+		     el borde del parrafo lo ponemos de color verde.
+		     */		     	   
+			p{
+			   
+			    /* solo vamos a mostrar el borde de la caja*/
+				border-style:solid;				
+			    border-width:5px; 
+			    border-color:green;				    			     			   
+			}
+			
+		    /* 
+		     * El borde del div lo ponemos de color rojo
+		     *
+		     */ 		     
+		    div{
+		    	/* solo vamos a mostrar el borde de la caja*/
+		    	border-style:solid;
+		    	border-width:5px;
+		    	border-color:red;
+		    }
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- elementos de bloque --->
+		<p>Note que el parrafo tiene un margen por default, por eso el borde verde no se junta con el parrafo de abajo</p>
+		<p>Este es otro parrafo, note que el margen que tiene por default hace que las cajas no se junten</p>
+		
+		<div>Este es un "div",a diferencia del parrafo NO TIENE margen por default. Por eso se junta con la caja de abajo</div>
+		<div>Otro div, su caja se junta con el de arriba</div>
+		
+		<br /> <!-- esta etiqueta solo deja un renglon libre, a fin de que las cajas no se amontonen -->
+		
+		<!-- EJEMPLO DE ANIDAMIENTO EN DIVS -->
+		<!-- Los DIVS pueden contener a elementos de bloque(divs, parrafos ...) 
+			y elementos de linea (links, listas ...) -->
+		<div>
+			<p>Este es un parrafo(elemento de bloque) dentro de un div</p>
+			<a>Este es un link(elemento de linea) dentro de un div</a>
+			<div>Este es otro div, dentro de un div.</div>
+		</div>
+		
+		
+		<!-- NO ES VALIDO ANIDAR UN ELEMENTO DE BLOQUE DENTRO DE UN PARRAFO -->
+		<p>
+			<div>Este div NO debería estar dentro de un parrafo, NOTE que aunque es un error de código,
+				  el navegador muestra el parrafo pero su borde no esta completo, no se pinto bien.
+				</div>
+		</p>
+		
+	</body>
+</html>

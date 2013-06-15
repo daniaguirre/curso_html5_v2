@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Posicionamiento relativo</title>
+		<style type="text/css">
+
+		    /* 
+		     el borde del div lo ponemos de color verde.
+		     */		     	   
+			div{			   
+			    /* solo vamos a mostrar el borde de la caja*/
+				border-style:solid;				
+			    border-width:5px; 
+			    border-color:green;					    			    		    			     			   
+			}
+			
+			
+		    /* 
+		     el borde del link lo ponemos de color rojo.
+		     */		     	   
+			a{
+				/* solo vamos a mostrar el borde de la caja*/
+				border-style:solid;				
+			    border-width:5px; 
+			    border-color:red;
+			}
+			
+		    /*		     
+		      POSICIONAMIENTO RELATIVO
+		      usamos un selector de ID para indicar que caja va tener posicionamiento relativo 
+		    */
+		    #div2{
+		        /* LE INDICAMOS QUE TENGA POSICIONAMIENTO RELATIVO*/
+		        /* LO MOVEMOS DE ARRIBA Y DE LA IZQUIERDA*/
+		    	position:relative;
+		    	top:9px;
+		    	left:9px;
+		    }
+		    
+		    /*		     
+		     * TAMBIEN PODEMOS APLICAR POSICIONAMIENTO RELATIVO A UN ELEMENTO DE LINEA 		     
+		      usamos un selector de ID para indicar que caja va tener posicionamiento relativo 
+		    */
+		    #link2{
+		        /* LE INDICAMOS QUE TENGA POSICIONAMIENTO RELATIVO*/
+		        /* LO MOVEMOS DE ARRIBA Y DE LA IZQUIERDA*/
+		    	position:relative;
+		    	top:9px;
+		    	left:9px;
+		    }
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- elementos de bloque --->
+		<div>div 1</div>
+		<div id="div2">div 2.</div>
+		<div>div 3.</div>		
+		
+		<br /> <!-- DEJAMOS UN ESPACIO PARA SEPARAR A LOS BLOQUES-->
+		
+		<!-- elementos de linea -->
+		<a href="#">link 1</a>
+		<a id="link2" href="#">link 2</a>
+		<a href="#">link 3</a>
+		
+	</body>
+</html>
