@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Posicionamiento Absoluto</title>
+		<style type="text/css">
+			/*
+			 ponemos los bordes de los divs de color verde
+			 */
+			div {
+				border-style: solid;
+				border-color: green;
+				margin-bottom: 10px;
+				font-size: 40px;
+				padding: 10px;
+			}
+
+			/*
+			 POSICIONAMIENTO ABSOLUTO
+			 usamos un selector de ID para indicar que caja va tener posicionamiento relativo
+			 */
+			#anuncio1, #anuncio2, #anuncio3 {
+				/* le damos un poco de estilo a las cajas*/
+				width: 400px;
+				height: 200px;
+				color: white;
+			}
+
+			#anuncio1 {
+				/* LE INDICAMOS QUE TENGA POSICIONAMIENTO ABSOLUTO*/
+				/* LO MOVEMOS DE ARRIBA Y DE LA IZQUIERDA*/
+				position: absolute;
+				top: 50px;
+				left: 100px;
+				background-color: #6D48D7;
+			}
+
+			#anuncio2 {
+				/* LE INDICAMOS QUE TENGA POSICIONAMIENTO ABSOLUTO*/
+				/* LO MOVEMOS DE ARRIBA Y DE LA IZQUIERDA*/
+				position: absolute;
+				top: 100px;
+				left: 150px;
+				background-color: #E74C3A;
+				/*-------- PONEMOS AL ANUNCIO 2 AL FRENTE -------------*/
+				z-index: 100;
+			}
+
+			#anuncio3 {
+				/* LE INDICAMOS QUE TENGA POSICIONAMIENTO ABSOLUTO*/
+				/* LO MOVEMOS DE ARRIBA Y DE LA IZQUIERDA*/
+				position: absolute;
+				top: 150px;
+				left: 200px;
+				background-color: #79AA42;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<!-- note que si el div tiene posicion absoluta no importa donde lo declar -->
+
+		<div id="encabezado">
+
+			div id="encabezado"
+
+		</div>
+		<div id="anuncio1">
+			id="anuncio1"
+		</div>
+		<div id="anuncio2">
+			id="anuncio2"
+		</div>
+		<div id="anuncio3">
+			id="anuncio3"
+		</div>
+		<div id="contenido">
+
+			div id="contenido"
+
+		</div>
+		<div id="pie-pagina">
+
+			div id="pie-pagina"
+
+		</div>
+
+	</body>
+</html>

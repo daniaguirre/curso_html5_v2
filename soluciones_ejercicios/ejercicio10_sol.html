@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejercicio 10</title>
+		<style type="text/css">			
+
+			@font-face {
+				font-family: 'love_ya';
+				src: url('../fuentes/loveya.eot'); /* IE9 Compat Modes */
+				src: url('../fuentes/loveya.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fuentes/loveya.woff') format('woff'), /* Modern Browsers */
+				url('../fuentes/loveya.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fuentes/loveya.svg#love_ya_like_a_sisterregular') format('svg'); /* Legacy iOS */
+			}
+
+			body {
+				font-family: "love_ya";
+			}
+
+			
+			.articulo {
+				width: 800px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 150px;
+				background-color: #79AA42;
+			}
+
+			.articulo, .articulo-contenido {
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				-o-border-radius: 3px;
+				border-radius: 3px;
+			}
+
+			.articulo-contenido {
+				padding: 40px;
+				position: relative;
+				top: 100px;
+				left: 100px;
+				background-color: white;
+			}
+
+			img {
+				position: relative;
+				top: 100px;
+				left: 100px;
+			}
+
+			.articulo-parrafo {
+				color: #666666;
+			}
+			
+
+		</style>
+	</head>
+	<body>
+
+		<!-- note que si el div tiene posicion absoluta no importa donde lo declar -->
+
+		<div class="articulo">
+
+			<div class="articulo-contenido">
+				<h1>La Escuela de Atenas</h1>
+				<p class="articulo-parrafo">
+					La escuela de Atenas es una de las pinturas más famosas del artista Rafael Sanzio. Fue hecha en boceto entre 1509 y 1510 y pintada entre 1510 y 1512 como parte de
+					una comisión para decorar con frescos las habitaciones que hoy en día son conocidas como las estancias de Rafael, ubicadas en el Vaticano. La Stanza della Segnatura
+					fue la primera en ser decorada, y La escuela de Atenas la segunda pintura en ser finalizada, tras La disputa del Sacramento.
+				</p>
+			</div>
+
+		</div>
+
+		<div class="articulo">
+			<img class="imagen-articulo" src="../imagenes/escuela_atenas.jpg" />
+		</div>
+
+	</body>
+</html>

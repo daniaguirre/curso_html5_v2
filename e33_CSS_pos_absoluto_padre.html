@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Posicionamiento Relativo + Absoluto</title>
+		<style type="text/css">
+			/*
+			 ponemos los bordes de los divs de color verde
+			 */
+			div {
+				/* solo vamos a mostrar el borde de la caja*/
+				border-style: solid;
+				border-color: green;
+			}
+
+			/*
+			 ponemos los bordes de los parrafos de color azul.
+			 */
+			p {
+				/* solo vamos a mostrar el borde de la caja*/
+				border-style: solid;
+				border-color: blue;
+			}
+
+			/*
+			 el borde del link lo ponemos de color rojo.
+			 */
+			a {
+				/* solo vamos a mostrar el borde de la caja*/
+				border-style: solid;
+				border-color: red;
+			}
+
+			#contenedor_padre {
+				height: 400px;
+				position: relative;
+			}
+			/*
+			 POSICIONAMIENTO ABSOLUTO
+			 usamos un selector de ID para indicar que caja va tener posicionamiento relativo
+			 */
+			#anuncio {
+				/* LE INDICAMOS QUE TENGA POSICIONAMIENTO ABSOLUTO*/
+				/* LO MOVEMOS DE ARRIBA Y DE LA IZQUIERDA*/
+				position: absolute;
+				/* le damos un poco de estilo a la caja*/
+				top: 70px;
+				left: 50px;
+				right: auto;
+				color: white;
+				background-color: #6D48D7;
+				width:300px;
+				height: 300px;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<!-- note que si el div tiene posicion absoluta no importa donde lo declar -->
+
+		<div>
+			div 1
+		</div>
+		<p>
+			Este es un parrafo
+		</p>
+		<p>
+			Este es otro parrafo con un link <a href="http://google.com.mx">Ir a google</a>
+		</p>
+
+		<p>
+			otro Parrafo
+		</p>
+		<div id="contenedor_padre">
+			<h1>position:relative (padre)</h1>			
+			<div id="anuncio">
+				<h1>position:absolute</h1>
+								
+				top: 70px;
+				left: 50px;
+				
+			</div>
+		</div>
+
+	</body>
+</html>

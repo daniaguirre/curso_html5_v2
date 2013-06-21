@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Posicionamiento Absoluto</title>
+		<style type="text/css">
+			/*
+			 ponemos los bordes de los divs de color verde
+			 */
+			div {			
+				border-style: solid;
+				border-color: green;
+				margin-bottom: 10px;
+				font-size: 40px;
+				padding: 10px;
+			}
+
+			/*
+			 POSICIONAMIENTO ABSOLUTO
+			 usamos un selector de ID para indicar que caja va tener posicionamiento relativo
+			 */
+			#anuncio {
+				/* LE INDICAMOS QUE TENGA POSICIONAMIENTO ABSOLUTO*/
+				/* LO MOVEMOS DE ARRIBA Y DE LA IZQUIERDA*/
+				position: absolute;
+				top: 50px;
+				left: 100px;
+				
+				/* le damos un poco de estilo a la caja*/
+				width: 400px;
+				height: 200px;
+				color: white;
+				background-color: #6D48D7;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<!-- note que si el div tiene posicion absoluta no importa donde lo declar -->
+
+		<div id="encabezado">
+
+			div id="encabezado"
+
+		</div>
+		<div id="anuncio">
+			id="anuncio"
+		</div>
+		<div id="contenido">
+
+			div id="contenido"
+
+		</div>
+		<div id="pie-pagina">
+
+			div id="pie-pagina"
+
+		</div>
+
+	</body>
+</html>
