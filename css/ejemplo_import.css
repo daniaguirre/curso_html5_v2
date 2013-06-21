@@ -1,0 +1,20 @@
+body {
+	background-color: #FFC540;
+	font-size: 190px;
+}
+
+#sombra1 {
+	text-shadow: 3px 4px 3px white;
+	-webkit-text-shadow: 3px 4px 3px white;
+	-moz-text-shadow: 3px 4px 3px white;
+	-o-text-shadow: 3px 4px 3px white;
+	text-shadow: 3px 4px 3px white;
+}
+
+#sombra2 {
+	text-shadow: 3px 4px 3px white;
+	-webkit-text-shadow: 3px 4px 3px white;
+	-moz-text-shadow: 3px 4px 3px white;
+	-o-text-shadow: 3px 4px 3px white;
+	text-shadow: 3px 4px 3px white, 6px 5px 4px #FF7700;
+}
