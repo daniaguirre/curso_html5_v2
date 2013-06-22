@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
 	<head>
-		<meta charset="UTF-8" />
-		<title>Ejercicio 12</title>
+		<meta charset="UTF-8" />	
+		<title>Porcentajes</title>		
 		<style type="text/css">
 			@font-face {
 				font-family: 'love_ya';
@@ -19,7 +19,7 @@
 			}
 
 			#pagina {
-				width: 950px;				
+				width: 100%;
 				border-style: solid;
 				border-color: white;
 			}
@@ -48,13 +48,15 @@
 			#pie-pagina, #cabecera {
 				margin-left: auto;
 				margin-right: auto;
-				width: 810px;
+				/* ---------- SUSTITYE ANCHO PIXELES POR PORCENTAJES -------------*/
+				width: 85.26315789473684%; /* 810px / 950px */
 			}
 
 			#blog {
 				margin-left: auto;
 				margin-right: auto;
-				width: 850px;
+				/* ---------- SUSTITYE ANCHO PIXELES POR PORCENTAJES -------------*/
+				width: 89.47368421052632%; /* 850px / 950px*/
 			}
 
 			/* ---------- APLICAMOS PROPIEDAD CLEAR ----------*/
@@ -64,14 +66,16 @@
 
 			#caja-der {
 				float: right;
-				width: 600px;
+				/* ---------- SUSTITYE ANCHO PIXELES POR PORCENTAJES -------------*/
+				width: 70.58823529411765%; /* 600px / 850px*/
 				margin-bottom: 20px;
 			}
 
 			#caja-izq {
 				padding: 20px;
 				float: left;
-				width: 190px;
+				/* ---------- SUSTITYE ANCHO PIXELES POR PORCENTAJES -------------*/
+				width: 22.35294117647059%; /* 190px / 850px */
 				background-color: #E74C3A;
 			}
 
@@ -139,5 +143,6 @@
 				Pie pagina
 			</div>
 		</div>
+		<!-- fin div id=pagina -->
 	</body>
 </html>
