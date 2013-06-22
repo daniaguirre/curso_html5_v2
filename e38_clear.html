@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Layout de 2 columnas,CLEAR</title>
+		<style type="text/css">
+			/*
+			 ponemos los bordes de los divs de color verde
+			 */
+			div {
+				/* solo vamos a mostrar el borde de la caja*/
+				border-style: solid;
+				border-color: green;
+				font-size:30px;
+			}
+
+
+			/* indicamos que la caja va tener un ancho de 250px*/
+			/* la flotamos a la derecha*/
+			#caja-flotante {
+				float: left;
+				width: 250px;
+				background-color: #8A6ED7;
+				margin-bottom: 20px;
+			}
+			
+
+			#pie-pagina {
+				clear: left;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div id="caja-flotante">
+			<img src="imagenes/coffe.jpg">
+			<p>
+				Un día sin cafe no tiene sentido.
+			</p>
+		</div>
+
+		<div id="pie-pagina">
+			<p>
+				Derechos reservados
+			</p>
+		</div>
+
+	</body>
+</html>

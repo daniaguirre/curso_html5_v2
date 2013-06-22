@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Uso de la propiedad float</title>
+		<style type="text/css">
+			body {
+				font-size: 40px;
+			}
+
+			/*
+			 ponemos los bordes de los divs de color verde
+			 */
+			div {
+				/* solo vamos a mostrar el borde de la caja*/
+				border-style: solid;
+				border-color: green;
+			}
+
+			/*
+			 ponemos los bordes de los parrafos de color azul.
+			 */
+			p {
+				border-style: solid;
+				border-color: blue;
+				margin: 5px;
+			}
+
+			/*
+			 el borde del link lo ponemos de color rojo.
+			 */
+			a {
+				/* solo vamos a mostrar el borde de la caja*/
+				border-style: solid;
+				border-color: red;
+			}
+
+			/*
+			 USO DE FLOAT
+			 usamos un selector de ID para indicar que caja va tener posicionamiento relativo
+			 */
+			#caja-flotante {
+				float: right;
+				background-color: #8A6ED7;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div id="caja-flotante">
+			<img src="imagenes/coffe.jpg">
+			<p>
+				Un día sin cafe no tiene sentido.
+			</p>
+		</div>
+
+		<!-- usamos los divs como contenedores de otros elementos -->
+		<div>
+			<p>
+				Este es un parrafo
+			</p>
+			<p>
+				Este es otro parrafo con un link <a href="http://google.com.mx">Ir a google</a>
+			</p>
+			<p>
+				Este es otro parrafo
+			</p>
+		</div>
+
+	</body>
+</html>
