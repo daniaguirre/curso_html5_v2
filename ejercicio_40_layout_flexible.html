@@ -6,53 +6,50 @@
 		<style type="text/css">
 			@font-face {
 				font-family: 'love_ya';
-				src: url('../fuentes/loveya.eot'); /* IE9 Compat Modes */
-				src: url('../fuentes/loveya.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-				url('../fuentes/loveya.woff') format('woff'), /* Modern Browsers */
-				url('../fuentes/loveya.ttf') format('truetype'), /* Safari, Android, iOS */
-				url('../fuentes/loveya.svg#love_ya_like_a_sisterregular') format('svg'); /* Legacy iOS */
+				src: url('fuentes/loveya.eot'); /* IE9 Compat Modes */
+				src: url('fuentes/loveya.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('fuentes/loveya.woff') format('woff'), /* Modern Browsers */
+				url('fuentes/loveya.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('fuentes/loveya.svg#love_ya_like_a_sisterregular') format('svg'); /* Legacy iOS */
 			}
 
 			body {
+				font-size: 100%;
 				font-family: "love_ya";
-				background-image: url("../imagenes/fondo_granulado2.png");
-			}
-
-			img {
-				height: 128px;
+				background-image: url("imagenes/fondo_granulado2.png");
 			}
 
 			.biografia, #cabecera, #pie-pagina, #caja-izq {
-				-webkit-border-radius: 10px;
-				-moz-border-radius: 10px;
-				-o-border-radius: 10px;
-				border-radius: 10px;
+				-webkit-border-radius: 1.0526315789473684%;
+				-moz-border-radius: 1.0526315789473684%;
+				-o-border-radius: 1.0526315789473684%;
+				border-radius: 1.0526315789473684%; /*10/950*/
 			}
 
 			#pie-pagina, #cabecera {
 				background-color: #79AA42;
-				padding: 20px;
-				font-size: 50px;
-				margin-bottom: 20px;
+				padding: 2.1052631578947368%; /* 20/950*/
+				font-size: 3.125em; /* 50px/16px */
+				margin-bottom: 2.1052631578947368%;
 				text-align: center;
 			}
 
 			.biografia {
 				background-color: #79AA42;
-				padding: 20px;
-				margin-bottom: 20px;
+				padding: 2.1052631578947368%;
+				margin-bottom: 2.1052631578947368%;
 			}
 
 			#pie-pagina, #cabecera {
 				margin-left: auto;
 				margin-right: auto;
-				width: 810px;
+				width: 85.2631578947368421%;/*810/950*/
 			}
 
 			#blog {
 				margin-left: auto;
 				margin-right: auto;
-				width: 850px;
+				width: 89.4736842105263158%/*850px/950*/;
 			}
 
 			/* ---------- APLICAMOS PROPIEDAD CLEAR ----------*/
@@ -62,42 +59,20 @@
 
 			#caja-der {
 				float: right;
-				width: 600px;
-				margin-bottom: 20px;
+				width: 63.1578947368421053%; /*600px/950*/
+				margin-bottom: 2.1052631578947368%;
 			}
 
 			#caja-izq {
-				padding: 20px;
+				padding: 2.1052631578947368%;
 				float: left;
-				width: 190px;
+				width: 20%; /*190/950*/
 				background-color: #E74C3A;
-			}
-
-			#twitter {
-				position: fixed;
-				bottom: 270px;
-				left: 5px;
-			}
-
-			#google {
-				position: fixed;
-				bottom: 140px;
-				left: 5px;
-			}
-
-			#facebook {
-				position: fixed;
-				bottom: 5px;
-				left: 5px;
 			}
 
 		</style>
 	</head>
 	<body>
-
-		<a id="twitter" class="logo-social" target="_blank" href="http://twitter.com/share?url=http://www.example.com&text=Muy recomendable!"><img  src="../imagenes/twitter2.png"></a>
-		<a id="facebook" class="logo-social" target="_blank" href="http://www.facebook.com/share.php?u=http://www.example.com"><img  src="../imagenes/facebook.png"></a>
-		<a id="google" class="logo-social" target="_blank" href="https://plus.google.com/share?url=http://www.example.com"><img  src="../imagenes/google.png"></a>
 
 		<div id="cabecera">
 			Mi página Web.
@@ -108,7 +83,7 @@
 			<div id="caja-der">
 				<div class="biografia">
 					<h1>David Hilbert</h1>
-					<img src="../imagenes/hilbert.jpg"/>
+					<img src="imagenes/hilbert.jpg"/>
 					<p>
 						David Hilbert (23 de enero de 1862, Königsberg, Prusia Oriental – 14 de febrero de 1943, Gotinga, Alemania)
 						fue un matemático alemán, reconocido como uno de los más influyentes del siglo XIX y principios del XX.
@@ -120,7 +95,7 @@
 
 				<div class="biografia">
 					<h1>Kurt Gödel</h1>
-					<img src="../imagenes/godel.png"/>
+					<img src="imagenes/godel.png"/>
 					<p>
 						Reconocido como uno de los más importantes lógicos de todos los tiempos, el trabajo de Gödel ha tenido
 						un impacto inmenso en el pensamiento científico y filosófico del siglo XX. Gödel, al igual que otros
@@ -156,5 +131,6 @@
 		<div id="pie-pagina">
 			Pie pagina
 		</div>
+
 	</body>
 </html>
