@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejemplo unidad em</title>
+		<style>
+			.caja-padre {
+				font-size: 400px;
+				border: solid 1px red;
+				width: 1em;
+				height: 1em;
+				margin: 0 0 20px 0;
+			}
+
+			.caja-hija {
+				width: .5em;
+				height: .5em;
+				border: solid 1px blue;
+			}
+
+			.otra-caja {				
+				border: solid 1px red;
+				width: 200px;
+				height: 200px;				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="caja-padre">
+			<div class="caja-hija"></div>
+		</div>
+
+		<div class="otra-caja"></div>
+	</body>
+</html>
