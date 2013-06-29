@@ -1,0 +1,47 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			#parrafo-click {
+				margin-left: auto;
+				margin-right: auto;
+				border-style: solid;
+				border-color: black;
+				width: 500px;
+			}
+		</style>
+
+		<script>
+			var animar = function() {
+
+				var imagen = document.querySelector("img");
+				imagen.src = "imagenes/happy_homer.jpg"
+			}
+
+			window.onload = function() {
+
+				var boton = document.querySelector("#boton-animar");
+				boton.addEventListener("click", animar);
+
+			}
+
+		</script>
+
+	</head>
+	<body>
+
+		<img src="imagenes/sad_homer.jpg" />
+		<p>
+			<button id="boton-animar" >
+				Animar!
+			</button>
+		</p>
+
+	</body>
+</html>

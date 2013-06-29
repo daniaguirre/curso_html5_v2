@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<style>
+			body {
+				background: url(imagenes/fondo_cuadros.png);
+				text-align: center;
+			}
+
+			div {
+				border-style: solid;
+				border-color: 1px solid rgb(181, 181, 181);
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
+				color: rgb(77, 77, 77);
+				background-color: rgb(238, 238, 238);
+				padding: 20px;
+				/*esquinas redondas*/
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				/*sombras*/
+				-webkit-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				-moz-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				box-shadow: rgb(80,80,80) 4px 3px 7px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="video-player" >
+			<video >
+				<source src="../videos/gato.mp4" >
+				<source src="../videos/gato.ogv" >
+				<source src="../videos/gato.webm" >
+			</video>
+		</div>
+
+		<div id="contenedor-texto" >
+			Manten presionado el mouse en esta zona para iniciar video
+		</div>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo funciones para manipular texto</title>
+
+		<script>
+			//LONGITUD CADENA
+			var texto = "abcde";
+			var tamañoTexto = texto.length;
+
+			document.write(texto + " longitud:" + tamañoTexto);
+			document.write("<br/>");
+
+			//BUSCANDO SI UNA CADENA(texto) CONTIENE UNA SUBCADENA(texto)
+			//NOTE QUE ENUMERA DESDE EL CERO
+			//REGRESA EL PRIMERO QUE ENCUENTRA DE IZQUIERDA A DERECHA
+			var nombre = "Cantor Cantor";
+			var textoABuscar = "Cantor";
+			var indiceSubcadena = nombre.indexOf(textoABuscar);
+
+			document.write("<b>" + nombre + "</b> contiene el texto:<b>" + textoABuscar + "</b> en la posicion: " + indiceSubcadena + " (indexOf)");
+			document.write("<br/>");
+
+			//IGUAL QUE indexOf, PERO BUSCA DE IZQUIERDA A DERECHA
+			indiceSubcadena = nombre.lastIndexOf(textoABuscar);
+			document.write("<b>" + nombre + "</b> contiene el texto:<b>" + textoABuscar + "</b> en la posicion: " + indiceSubcadena + " (lastIndexOf)");
+			document.write("<br/>");
+
+			document.write("<br/>");
+
+			//REMPLAZAR CADENA
+			//NOTE QUE SOLO REMPLAZA LA PRIMERA CADENA
+			var textoOriginal = "IE es un excelente navegador, desde el principio IE se ha apegado a los estandares";
+			var textoRemplazo = textoOriginal.replace("IE", "Chrome");
+			document.write("Texto original: <b>" + textoOriginal + "</b>");
+			document.write("<br/>");
+			document.write("Texto remplazo: <b>" + textoRemplazo + "</b>");
+
+			document.write("<br/>");
+			document.write("<br/>");
+
+			//REMPLAZAR CADENA
+			//USANDO EXPRESION REGULAR
+			var textoOriginal = "IE es un excelente navegador, desde el principio IE se ha apegado a los estandares";
+			var textoRemplazo = textoOriginal.replace(/IE/g, "Chrome");
+			document.write("Texto original: <b>" + textoOriginal + "</b>");
+			document.write("<br/>");
+			document.write("Texto remplazo: <b>" + textoRemplazo + "</b>");
+
+			document.write("<br/>");
+			document.write("<br/>");
+
+			//OBTENER UNA PARTE DE LA CADENA
+			var nombre2 = "Ismael Robles";
+			var subcadena = nombre2.substring(0, 3);
+			//INDICE INICIO, INDICE FIN
+			document.write("Texto original: <b>" + nombre2 + "</b>");
+			document.write("<br/>");
+			document.write("Texto subcadena: <b>" + subcadena + "</b>");
+
+			document.write("<br/>");
+			document.write("<br/>");
+
+			//CONVERTIR A MINUSCULAS
+			var nombreMinusculas = nombre2.toLowerCase();
+			document.write("Texto original: <b>" + nombre2 + "</b>");
+			document.write("<br/>");
+			document.write("Texto minusculas: <b>" + nombreMinusculas + "</b>");
+
+			document.write("<br/>");
+			document.write("<br/>");
+
+			//CONVERTIR A MAYUSCULAS
+			var nombreMayusculas = nombre2.toUpperCase();
+			document.write("Texto original: <b>" + nombre2 + "</b>");
+			document.write("<br/>");
+			document.write("Texto mayusculas: <b>" + nombreMayusculas + "</b>");
+
+		</script>
+
+	</head>
+	<body>
+
+	</body>
+</html>

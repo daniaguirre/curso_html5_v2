@@ -16,7 +16,6 @@
 				url('../fuentes/marckscript.ttf') format('truetype'), /* Safari, Android, iOS */
 				url('../fuentes/marckscript.svg#marck script') format('svg'); /* Legacy iOS */
 			}
-
 			body {
 				font-family: "marck_script";
 				background-image: url("../imagenes/body-bg.jpg");
@@ -24,29 +23,29 @@
 
 			#encabezado {
 				color: white;
-				font-size: 40px;
+				font-size: 2.5em; /* 40px/16px */
 			}
 
 			#contenedor {
-				width: 1024px;
+				width: 100%; /*1024/1024*/
 			}
 
 			#encabezado, #menu, #contenido, #pie-pagina {
 				margin-left: auto;
 				margin-right: auto;
-				width: 980px;
-				margin-bottom: 20px;
+				width: 95.703125%; /* 980px/1024px */
+				margin-bottom: 20px; /* EL MARGIN BOTTOM NO LO PODEMOS CAMBIAR*/
 			}
 
 			#caja-der {
 				float: right;
-				width: 290px;
+				width: 29.59183673469388%; /* 290px/980px */
 			}
 
 			#caja-imagenes, #caja-temas {
-				padding: 20px;
+				padding: 6.896551724137931%; /* 20px/290px */
 				background-color: white;
-				margin-bottom: 20px;
+				margin-bottom: 20px; /* no cambia*/
 			}
 
 			#menu, #caja-izq, #caja-imagenes, #caja-temas {
@@ -65,14 +64,14 @@
 
 			#caja-izq {
 				float: left;
-				width: 610px;
-				padding: 30px;
+				width: 62.24489795918367%; /* 610px/980px */
+				padding: 3.061224489795918%; /*30px/980px*/
 				background-color: white;
 			}
 
 			#menu {
-				width: 940px;
-				padding: 20px;
+				width: 91.796875%; /* 940px/1024px */
+				padding: 1.953125%; /*20px/1024px*/
 				background-color: #6A6A6A;
 				color: white;
 			}
@@ -82,8 +81,8 @@
 			}
 
 			.menu-link {
-				margin-left: 20px;
-				font-size: 24px;
+				margin-left: 2.127659574468085%; /*20px/940px*/
+				font-size: 1.5em; /*24px/16px*/
 				color: white;
 			}
 
@@ -139,7 +138,7 @@
 						<img src="../imagenes/mini/mini7.jpg">
 						<img src="../imagenes/mini/mini8.jpg">
 					</div>
-					<div class="clear"></div>
+					<div class="clear"> </div>
 				</div>
 				<div id="caja-izq">
 					<h2>Titulo articulo blog</h2>
@@ -147,19 +146,21 @@
 					<p>
 						Fusce ut sem est. In eu sagittis felis. In gravida arcu ut neque ornare vitae rutrum turpis vehicula. Nunc ultrices sem mollis metus rutrum non malesuada metus fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque interdum rutrum quam, a pharetra est pulvinar ac. Vestibulum congue nisl magna. Ut vulputate odio id dui convallis in adipiscing libero condimentum. Nunc et pharetra enim. Praesent pharetra, neque et luctus tempor, leo sapien faucibus leo, a dignissim turpis ipsum sed libero. Sed sed luctus purus. Aliquam faucibus turpis at libero consectetur euismod. Nam nunc lectus, congue non egestas quis, condimentum ut arcu. Nulla placerat, tortor non egestas rutrum, mi turpis adipiscing dui, et mollis turpis tortor vel orci. Cras a fringilla nunc. Suspendisse volutpat, eros congue scelerisque iaculis, magna odio sodales dui, vitae vulputate elit metus ac arcu. Mauris consequat rhoncus dolor id sagittis. Cras tortor elit, aliquet quis tincidunt eget, dignissim non tortor.
 					</p>
+
 					<h2>Un video</h2>
-					<video controls="controls">
+					<video class="flexible" controls="controls" >
 						<source src="../videos/chrome_japan.mp4" type="video/mp4" >
 						<source src="../videos/chrome_japan.ogv" type="video/ogg" >
-						<source src="../videos/chrome_japan.webm" type="video/webm" >
+						<source src="../ videos/chrome_japan.webm" type="video/webm" >
 
 						Tu navegador no soporta video nativo
 					</video>
+
 				</div>
-				<div class="clear"></div>
+				<div class="clear"> </div>
 			</div>
 			<div id="pie-pagina" class="clear">
-				Pagina web para el ejercicio 14
+				Pagina web para el ejercicio 13
 			</div>
 
 		</div>

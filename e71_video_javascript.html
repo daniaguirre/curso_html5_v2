@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo Control Video con JavaScript</title>
+
+		<style>
+			body {
+				background: url(imagenes/fondo_cuadros.png);
+				text-align: center;
+			}
+
+			div {
+				border-style: solid;
+				border-color: 1px solid rgb(181, 181, 181);
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
+				color: rgb(77, 77, 77);
+				background-color: rgb(238, 238, 238);
+				padding: 20px;
+				/*esquinas redondas*/
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				/*sombras*/
+				-webkit-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				-moz-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				box-shadow: rgb(80,80,80) 4px 3px 7px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function reanudarPausar() {
+				var miVideo = document.querySelector('video');
+
+				if (miVideo.paused)
+					miVideo.play();
+				else
+					miVideo.pause();
+			}
+
+			function dobleTam() {
+				var miVideo = document.querySelector('video');
+				miVideo.height = miVideo.videoHeight * 2;
+			}
+
+			function regresarTamOriginal() {
+				var miVideo = document.querySelector('video');
+				miVideo.height = miVideo.videoHeight;
+			}
+
+
+			window.onload = function() {
+
+				var botonPausa = document.querySelector("#boton-pausa");
+				botonPausa.addEventListener("click", reanudarPausar);
+
+				var botonAumentar = document.querySelector("#boton-aumentar");
+				botonAumentar.addEventListener("click", dobleTam);
+
+				var botonTamOriginal = document.querySelector("#boton-tam-original");
+				botonTamOriginal.addEventListener("click", regresarTamOriginal);
+
+			}
+
+		</script>
+	</head>
+	<body>
+		<div class="video-player" >
+			<video >
+				<source src="videos/gato.mp4" >
+				<source src="videos/gato.ogv" >
+				<source src="videos/gato.webm" >
+			</video>
+		</div>
+
+		<div id="contenedor-texto">
+			<button id="boton-pausa">
+				Reanudar/Pausar
+			</button>
+			<button id="boton-aumentar">
+				Aumentar al doble
+			</button>
+			<button id="boton-tam-original">
+				Regresar al tamaño original
+			</button>
+		</div>
+	</body>
+</html>

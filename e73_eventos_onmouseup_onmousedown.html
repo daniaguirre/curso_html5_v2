@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			div {
+				font-size: 40px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 200px;
+				background-color: #D94A38;
+				width: 420px;
+				height: 20px;
+				padding: 40px;
+			}
+
+		</style>
+		<script>
+			function mousePresionado() {
+				var caja = document.querySelector("div");
+				caja.style.backgroundColor = "#1ec5e5";
+				caja.innerHTML = "Suelta el boton"
+			}
+
+			function mouseSoltarBoton() {
+				var caja = document.querySelector("div");
+				caja.style.backgroundColor = "#D94A38";
+				caja.innerHTML = "El boton se ha soltado"
+			}
+
+
+			window.onload = function() {
+				var caja = document.querySelector("div");
+
+				caja.addEventListener("mousedown", mousePresionado);
+				caja.addEventListener("mouseup", mouseSoltarBoton);
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<div>
+			Presioname
+		</div>
+
+	</body>
+</html>

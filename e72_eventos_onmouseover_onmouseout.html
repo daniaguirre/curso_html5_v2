@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			div {
+				font-size: 40px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 100px;
+				background-color: #D94A38;
+				width: 420px;
+				height: 20px;
+				padding: 40px;
+			}
+
+		</style>
+		<script>
+			function mouseArriba() {
+				var caja = document.querySelector("div");
+				caja.innerHTML = "Mouse arriba!"
+			}
+
+			function mouseAfuera() {
+				var caja = document.querySelector("div");
+				caja.innerHTML = "Mouse afuera!"
+			}
+
+
+			window.onload = function() {
+				var caja = document.querySelector("div");
+
+				caja.addEventListener("mouseover", mouseArriba);
+				caja.addEventListener("mouseout", mouseAfuera);
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<div >
+			Pon el mouse encima
+		</div>
+
+	</body>
+</html>

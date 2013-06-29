@@ -1,0 +1,60 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Evento y cadenas</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			img {
+				height: 210px;
+			}
+
+		</style>
+
+		<script>
+			function animar() {
+
+				var imagen = document.querySelector("img");
+				var rutaActual = imagen.src;
+
+				//buscamos si la ruta de la imagen contiene al homero feliz
+				//si contiene esa cadena regresara un indice diferente de cero
+				var indiceCadenaABuscar = rutaActual.indexOf("imagenes/happy_homer.jpg");
+
+				//si el homero esta feliz
+				if (indiceCadenaABuscar != -1) {
+
+					//pinta al homero triste
+					imagen.src = "imagenes/sad_homer.jpg";
+
+				} else {//si esta triste
+
+					//pintalo feliz
+					imagen.src = "imagenes/happy_homer.jpg"
+				}
+
+			}
+
+
+			window.onload = function() {
+				var boton = document.querySelector("button");
+				boton.addEventListener("click", animar);
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<img src="imagenes/sad_homer.jpg" />
+		<p>
+			<button >
+				Animar!
+			</button>
+		</p>
+
+	</body>
+</html>

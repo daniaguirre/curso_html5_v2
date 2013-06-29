@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Ejercicio uso If y fuentes</title>
+		<style>
+			/*Esta fuente es externa.
+			 ---------------------------------------------------- */
+			@font-face {
+				font-family: 'marck_script';
+				src: url('../fuentes/marckscript.eot'); /* IE9 Compat Modes */
+				src: url('../fuentes/marckscript.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fuentes/marckscript.woff') format('woff'), /* Modern Browsers */
+				url('../fuentes/marckscript.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fuentes/marckscript.svg#marck script') format('svg'); /* Legacy iOS */
+			}
+
+			@font-face {
+				font-family: 'love_ya';
+				src: url('../fuentes/loveya.eot'); /* IE9 Compat Modes */
+				src: url('../fuentes/loveya.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fuentes/loveya.woff') format('woff'), /* Modern Browsers */
+				url('../fuentes/loveya.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fuentes/loveya.svg#love_ya_like_a_sisterregular') format('svg'); /* Legacy iOS */
+			}
+
+			body {
+				background: url(../imagenes/fondo_cuadros.png);
+				text-align: center;
+			}
+
+			#contenedor-texto {
+				height: 200px;
+			}
+
+			div {
+				border-style: solid;
+				border-color: 1px solid rgb(181, 181, 181);
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
+				color: rgb(77, 77, 77);
+				background-color: rgb(238, 238, 238);
+				padding: 20px;
+				width: 800px;
+				/*esquinas redondas*/
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				/*sombras*/
+				-webkit-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				-moz-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				box-shadow: rgb(80,80,80) 4px 3px 7px;
+			}
+
+			.fuente-love {
+				font-family: "love_ya";
+			}
+
+			.fuente-mark {
+				font-family: "marck_script";
+			}
+		</style>
+		<script>
+			function cambiarFuente() {
+
+				var caja = document.querySelector("#caja-dinamica");
+
+				//si la fuente es mark
+				if (caja.className == "fuente-mark") {
+
+					//cambia a fuente love
+					caja.className = "fuente-love";
+
+				} else {//si la fuente es love
+
+					//cambia la fuente a mark
+					caja.className = "fuente-mark"
+				}
+			}
+
+
+			window.onload = function() {
+				//declaramos la variable para guardar la funcion
+
+				var boton = document.querySelector("button");
+				boton.addEventListener("click", cambiarFuente);
+
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<div id="contenedor-texto">
+			<h1 id="caja-dinamica" class="fuente-mark"> El sabio no se sienta para lamentarse, sino que se pone alegremente
+			a su tarea de reparar el daño hecho. </h1>
+
+		</div>
+
+		<div>
+			<button>
+				Cambiar fuente
+			</button>
+		</div>
+
+	</body>
+</html>
