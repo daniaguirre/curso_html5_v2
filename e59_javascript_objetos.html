@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo Objetos JavaScript</title>
+		<script>
+		
+
+			//PRIMERA FORMA DE DECLARAR UN OBJETO
+			var persona = new Object();
+			persona.nombre = "Ismael";
+			persona.edad = 27;
+			persona.hablar = function() {
+				alert("hola");
+			}
+			
+			//SEGUNDA FORMA DE DECLARAR UN OBJETO, USANDO JSON
+			var persona2 = {
+				nombre : "Juan",
+				edad : 30,
+				hablar : function() {
+					alert("hola");
+				}
+			}
+
+			//VARIANTE DE LA SEGUNDA FORMA
+			var persona3 = {};
+			persona3.nombre = "Diana";
+			persona3.edad = 25;
+			persona3.hablar = function() {
+				alert("hola");
+			}
+			
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

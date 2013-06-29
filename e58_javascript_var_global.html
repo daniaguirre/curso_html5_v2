@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo variable global</title>
+		<script>
+			var variableGlobal = "GLOBAL";
+
+			function miFuncion1() {
+				variableGlobalSinQuerer = "GLOBAL2";
+			}
+
+            miFuncion1();
+			alert(variableGlobalSinQuerer);
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

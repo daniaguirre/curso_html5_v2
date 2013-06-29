@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo scope</title>
+		<script>
+			var variableGlobal = "GLOBAL";
+
+			function miFuncion2() {
+				//PODEMOS USAR EL MISMO NOMBRE PARA UNA VARIABLE
+				//EN OTRA FUNCION
+				var variable1 = "hola";
+		      
+				var variable2 = "hola2";
+
+				
+			}
+
+			function miFuncion1() {
+				var variable1 = "hola en funcion 1";
+
+								
+				alert("variable1:" + variable1);
+				alert("variable global:" + variableGlobal);
+				
+				//ESTA FUNCION NO PUEDE VER A variable2 de  miFuncion 2
+				//POR QUE NO ESTA EN SU CONTEXTO DE EJECUCION
+				//POR LO CUAL AQUI OCURRE UN ERROR
+				alert("variable2:" + variable2);
+			}
+			
+			miFuncion1();
+			
+			//LA SIGUIENTE LINEA TAMBIEN CAUSA ERROR
+			//YA QUE variable2 solo esta definida dentro de miFuncion2
+			//alert(variable2)
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

@@ -1,0 +1,96 @@
+@media print {
+
+	/* --- LAS REGLAS TODAS VAN DENTRO DEL BLOQUE @media --- */
+	body {
+		color: blue;
+	}
+}
+
+@media screen {
+
+	/*----- LAS REGLAS TODAS VAN DENTRO DEL BLOQUE @media----*/
+	@font-face {
+		font-family: 'love_ya';
+		src: url('../fuentes/loveya.eot'); /* IE9 Compat Modes */
+		src: url('../fuentes/loveya.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('../fuentes/loveya.woff') format('woff'), /* Modern Browsers */
+		url('../fuentes/loveya.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fuentes/loveya.svg#love_ya_like_a_sisterregular') format('svg'); /* Legacy iOS */
+	}
+
+	body {
+		font-family: "love_ya";
+		background-image: url("../imagenes/fondo_granulado2.png");
+	}
+
+	#pagina {
+		width: 100%; /*950px base*/
+		border-style: solid;
+		border-color: white;
+	}
+
+	.biografia, #cabecera, #pie-pagina, #caja-izq {
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-o-border-radius: 10px;
+		border-radius: 10px;
+	}
+
+	#pie-pagina, #cabecera {
+		background-color: #79AA42;
+		/*--------- RELLENO POR PORCENTAJES ---------*/
+		padding: 2.105263157894737%; /* 20px /950px */
+		/**/
+		/* ----------- CAMBIO TEXTO PIXELES A UNIDADES em ----------*/
+		font-size: 3.25em; /*50px/16px*/
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.biografia {
+		background-color: #79AA42;
+		/*--------- RELLENO POR PORCENTAJES ---------*/
+		padding: 3.333333333333333%; /* 20px / 600px*/
+		margin-bottom: 20px;
+	}
+
+	#pie-pagina, #cabecera {
+		margin-left: auto;
+		margin-right: auto;
+		/* ---------- SUSTITYE ANCHO PIXELES POR PORCENTAJES -------------*/
+		width: 85.26315789473684%; /* 810px / 950px */
+	}
+
+	#blog {
+		margin-left: auto;
+		margin-right: auto;
+		/* ---------- SUSTITYE ANCHO PIXELES POR PORCENTAJES -------------*/
+		width: 89.47368421052632%; /* 850px / 950px*/
+	}
+
+	/* ---------- APLICAMOS PROPIEDAD CLEAR ----------*/
+	#pie-pagina, #cabecera {
+		clear: both;
+	}
+
+	#caja-der {
+		float: right;
+		/* ---------- SUSTITYE ANCHO PIXELES POR PORCENTAJES -------------*/
+		width: 70.58823529411765%; /* 600px / 850px*/
+		margin-bottom: 20px;
+	}
+
+	#caja-izq {
+		/*--------- RELLENO POR PORCENTAJES ---------*/
+		padding: 2.352941176470588%; /* 20px /850px */
+		float: left;
+		/* ---------- SUSTITYE ANCHO PIXELES POR PORCENTAJES -------------*/
+		width: 22.35294117647059%; /* 190px / 850px */
+		background-color: #E74C3A;
+	}
+
+	.flexible {
+		max-width: 100%;
+	}
+
+}

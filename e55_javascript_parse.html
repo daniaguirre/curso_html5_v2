@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Texto a numero</title>
+		<script type="text/javascript">
+			var numeroEnteroTexto = "42";
+			var numeroEntero = parseInt(numeroEnteroTexto);
+
+			var numeroDecimalTexto = "15.058";
+			var numeroDecimal = parseFloat(numeroDecimalTexto);//texto a un numero 
+
+			alert("numero Entero:" + numeroEntero + ", numero decimal:" + numeroDecimal);
+
+			//Mostramos el uso con diferentes bases
+			var numOctal = parseInt("70", 8);//texto a numero, 56 en octal
+			
+			var numHexadecimal = parseInt("F", 16); //texto a numero, 16 en hexadecimal
+
+			alert("numero Octal:" + numOctal + ", numero hexadecimal:" + numHexadecimal);
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
