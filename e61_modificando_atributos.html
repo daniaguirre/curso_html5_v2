@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Modificando atributos</title>
+		<style type="text/css">
+			body {
+				/*centramos el texto y las imagenes*/
+				text-align: center;
+			}
+
+			.texto-rojo {
+				color: red;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				//NOTE EL ALERT y la carga del DOM
+				alert("ahora cambia");
+
+				var imagen = document.querySelector("img");
+				//cambiamos la imagen
+				imagen.src = "imagenes/paisaje3.jpg";
+
+				//cambiamos la clase de una etiqueta
+				var titulo = document.querySelector("h1")
+				titulo.className = "texto-rojo";							
+
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Modificando atributos</h1>
+		<p>
+			<img src="imagenes/paisaje1.jpg" />
+		</p>
+		<p>
+			<img src="imagenes/paisaje2.jpg" />
+		</p>
+	</body>
+</html>

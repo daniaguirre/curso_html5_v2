@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo query selector</title>
+		<style type="text/css">
+			h1, p, p {
+				border-style: solid;
+			}
+
+			p {
+				padding: 10px;
+				margin-bottom: 20px;
+			}
+
+			.texto-rojo {
+				color: red;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				alert("ahora cambia");
+
+				//USAMOS UN SELECTOR DE ID
+				var nodoPorID = document.querySelector("#titulo2");
+				//modificamos el texto que contiene el elemento encontrado
+				nodoPorID.innerHTML = "Nuevo texto usando selector de ID";
+
+				//USAMOS UN SELECTOR DE CLASE
+				//NOTE que si hay varios elementos, solo regresa el primero que encuentra
+				var nodoPorClase = document.querySelector(".texto-rojo");
+				nodoPorClase.innerHTML = "Nuevo Texto usando selector de clase";
+
+				//USAMOS UN SELECTOR DE ETIQUETA
+				var nodoPorEtiqueta = document.querySelector("p");
+				nodoPorEtiqueta.innerHTML = "Nuevo texto usando selector de etiqueta";
+				
+				//alert(nodoPorEtiqueta.tagName);
+
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="titulo1">Titulo 1</h1>
+		<h1 id="titulo2">Titulo 2</h1>
+		<h1 id="titulo3" class="texto-rojo">Titulo 3</h1>
+		<h1 id="titulo4">Titulo 4</h1>
+
+		<p>
+			Parrafo1
+		</p>
+		<p>
+			Parrafo2
+		</p>
+		<p>
+			Parrafo3
+		</p>
+
+	</body>
+</html>

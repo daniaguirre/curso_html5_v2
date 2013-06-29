@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejercicio 16</title>
+		<script>
+			function muestraDatos(persona) {
+
+				var mensaje = "nombre:" + persona.nombre;
+				mensaje = mensaje + ", apellido:" + persona.apellido;
+				mensaje = mensaje + ",domicilio:" + persona.domicilio;
+				alert(mensaje);
+			}
+
+			var nombre = prompt("nombre");
+			var apellido = prompt("apellido");
+			var domicilio = prompt("domicilio");
+
+			//se crea a la persona
+			var persona = {};
+			persona.nombre = nombre;
+			persona.apellido = apellido;
+			persona.domicilio = domicilio;
+			
+			//muestra datos
+			muestraDatos(persona);
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
