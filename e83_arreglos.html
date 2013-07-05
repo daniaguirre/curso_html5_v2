@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<script type="text/javascript">
+			var nombres = ["Juan", "Pedro Paramo", "Lupe"];
+			var numeros = [1, 2, 3, 4]
+			var persona = {
+				nombre : "ismael",
+				edad : 27
+			}
+
+			var mixto = ["Juan", 4, "Pedro", persona];
+
+			//PODEMOS MODIFICAR LOS VALORES con
+			nombres[1] = "Pedro";
+
+			//ACCEDIENDO AL ARREGLO
+			//NOTE QUE PASA SI CAMBIA EL INDICE
+			document.write("nombres[1]:" + nombres[1]);
+			document.write("<br/>");
+			document.write("<br/>");
+
+			//METODOS
+			//TAMAÑO, NOTE QUE EL ARREGLO SE CONVIERTE A CADENA
+			document.write("arreglo:<b>" + nombres + "</b> tamaño:" + nombres.length);
+			document.write("<br/>");
+			document.write("<br/>");
+
+			//AGREGAR
+			nombres[3] = "Juanita";
+			document.write("arreglo([3]):<b>" + nombres + "</b>");
+			document.write("<br/>");
+			document.write("<br/>");
+
+			//AGREGAR 2
+			nombres.push("Maria");
+			nombres.push("Pepe");
+			nombres.push("Chonita");
+			document.write("arreglo(push):<b>" + nombres + "</b>");
+			document.write("<br/>");
+			document.write("<br/>");
+
+			//CONCATENAR ARREGLOS
+			var muchosNombres = nombres.concat(["Eustaquia", "Ramiro", "Ponciano"]);
+			document.write("arreglo:<b>" + nombres + "</b>");
+			document.write("<br/>");
+			document.write("arreglo(concatenacion):<b>" + muchosNombres + "</b>");
+			document.write("<br/>");
+			document.write("<br/>");
+
+			//REMOVER
+			nombres.pop();
+			document.write("arreglo(pop):<b>" + nombres + "</b>");
+			document.write("<br/>");
+			document.write("<br/>");
+
+			//REMOVER 2
+			//inicio, cuantos a remover
+			nombres.splice(0, 2)
+			document.write("arreglo(splice):<b>" + nombres + "</b>");
+			document.write("<br/>");
+			document.write("<br/>");
+
+			//CORTAR ARREGLOS, igual que substring
+			//indice inicio , indice final
+			var nuevoArreglo = nombres.slice(1, 2);
+			document.write("arreglo:<b>" + nombres + "</b>");
+			document.write("<br/>");
+			document.write("arreglo slice(1,2):<b>" + nuevoArreglo + "</b>");
+			document.write("<br/>");
+			document.write("<br/>");
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo Control Video con JavaScript</title>
+
+		<style>
+			body {
+				background: url(imagenes/fondo_cuadros.png);
+				text-align: center;
+			}
+
+			div {
+				border-style: solid;
+				border-color: 1px solid rgb(181, 181, 181);
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
+				color: rgb(77, 77, 77);
+				background-color: rgb(238, 238, 238);
+				padding: 20px;
+				/*esquinas redondas*/
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				/*sombras*/
+				-webkit-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				-moz-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				box-shadow: rgb(80,80,80) 4px 3px 7px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			var terminaVideo = function() {
+				alert("termino el video!")
+			}
+
+			window.onload = function() {
+
+				var miVideo = document.querySelector("#mi-video");
+				miVideo.addEventListener("ended", terminaVideo);
+
+			}
+
+		</script>
+	</head>
+	<body>		
+
+		<div class="video-player" >			
+			<video id="mi-video" controls>
+				<source src="videos/gadget.mp4" >
+				<source src="videos/gadget.ogg" >
+				<source src="videos/gadget.webm" >
+			</video>
+		</div>
+	</body>
+</html>

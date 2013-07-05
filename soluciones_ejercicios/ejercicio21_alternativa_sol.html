@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejercicio 21</title>
+
+		<style>
+			body {
+				background: url(../imagenes/fondo_granulado.png);
+				text-align: center;
+			}
+
+			div {
+				border-style: solid;
+				border-color: 1px solid rgb(181, 181, 181);
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
+				color: rgb(77, 77, 77);
+				background-color: rgb(238, 238, 238);
+				padding: 20px;
+				width: 800px;
+				/*esquinas redondas*/
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				/*sombras*/
+				-webkit-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				-moz-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				box-shadow: rgb(80,80,80) 4px 3px 7px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function cambiaVideo(evento, nombreVideo) {
+
+				var miVideo = document.querySelector("video");
+
+				//determinamos cual es el formato soportado
+				if (miVideo.canPlayType('video/mp4')) {
+					miVideo.src = "../videos/" + nombreVideo + ".mp4";
+				}
+
+				if (miVideo.canPlayType('video/ogg')) {
+					miVideo.src = "../videos/" + nombreVideo + ".ogg";
+				}
+
+				if (miVideo.canPlayType('video/webm')) {
+					miVideo.src = "../videos/" + nombreVideo + ".webm";
+				}
+
+				//reproducimos un nuevo video
+				miVideo.load();
+				miVideo.play();
+			}
+
+
+			window.onload = function() {
+				var botonGato = document.querySelector("#boton-gato");
+				botonGato.addEventListener("click", function(evento) {
+					cambiaVideo(evento, "gato");
+				});
+
+				var botonOso = document.querySelector("#boton-oso");
+				botonOso.addEventListener("click", function(evento) {
+					cambiaVideo(evento, "oso");
+				});
+
+				var botonGadget = document.querySelector("#boton-gadget");
+				botonGadget.addEventListener("click", function(evento) {
+					cambiaVideo(evento, "gadget");
+				});
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<div id="contenido">
+			<video controls>
+				<source src="../videos/oso.mp4" >
+				<source src="../videos/oso.ogg" >
+				<source src="../videos/oso.webm" >
+			</video>
+		</div>
+		<div >
+
+			<button id="boton-gato">
+				Video del Gato
+			</button>
+			<button id="boton-oso">
+				Video del Oso
+			</button>
+			<button id="boton-gadget">
+				Video del Gadget
+			</button>
+
+		</div>
+
+	</body>
+</html>

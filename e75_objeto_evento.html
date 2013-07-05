@@ -1,0 +1,66 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			p {
+				margin-left: auto;
+				margin-right: auto;
+				border-style: solid;
+				border-color: black;
+				width: 500px;
+				padding: 20px;
+			}
+		</style>
+
+		<script>
+			var cambiarTexto = function(evento) {
+
+				var parrafoActual = evento.target;
+
+				alert(evento.type);
+				parrafoActual.innerHTML = "nuevo texto";
+
+				//NOTE QUE target tiene al OBJETO ELEMENT QUE genero el evento.
+				if (evento.target == document.querySelector("#parrafo-click")) {
+					alert("iguales")
+				}
+			}
+
+			window.onload = function() {
+
+				//LLAMANDO A UNA FUNCION PREVIAMENTE DEFINIDA
+				var parrafo = document.querySelector("#parrafo-click");
+				parrafo.addEventListener("click", cambiarTexto);
+
+				//LLAMANDO A UNA FUNCION ANONIMA
+				var parrafo2 = document.querySelector("#parrafo2-click");
+				parrafo2.addEventListener("click", function(evento) {
+
+					var parrafoActual = evento.target;
+					alert(evento.type);
+					parrafoActual.innerHTML = "nuevo texto";
+				});
+
+			}
+
+		</script>
+
+	</head>
+	<body>
+
+		<p id="parrafo-click">
+			Texto Actual
+		</p>
+
+		<p id="parrafo2-click">
+			Texto Actual 2
+		</p>
+
+	</body>
+</html>

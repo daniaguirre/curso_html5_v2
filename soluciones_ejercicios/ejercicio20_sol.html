@@ -30,7 +30,7 @@
 		</style>
 
 		<script type="text/javascript">
-			function parar() {
+			function detener() {
 				var miVideo = document.querySelector('video');
 				miVideo.pause();
 			}
@@ -40,7 +40,7 @@
 				miVideo.play();
 			}
 
-			function parar2() {
+			function detenerPresionado() {
 				var miVideo = document.querySelector('video');
 				var contenedorTexto = document.querySelector("#contenedor-texto");
 				contenedorTexto.innerHTML = "Manten presionado el mouse en esta zona para iniciar video";
@@ -48,28 +48,44 @@
 				miVideo.pause();
 			}
 
-			function reanudar2() {
+			function reanudarPresionado() {
 				var miVideo = document.querySelector('video');
 				miVideo.play();
 
 				var contenedorTexto = document.querySelector("#contenedor-texto");
 				contenedorTexto.innerHTML = "Suelta el boton para parar el video";
 
-				
+			}
+
+
+			window.onload = function() {
+
+				var reproductorVideo = document.querySelector('video');
+
+				/** hacemos que el video se detenga y se reanude usando eventos**/
+				reproductorVideo.addEventListener("mouseover", reanudar);
+				reproductorVideo.addEventListener("mouseout", detener);
+
+				var caja = document.querySelector("#contenedor-texto");
+				caja.addEventListener("mousedown", reanudarPresionado);
+
+				var caja = document.querySelector("#contenedor-texto");
+				caja.addEventListener("mouseup", detenerPresionado);
+
 			}
 
 		</script>
 	</head>
 	<body>
 		<div class="video-player" >
-			<video onmouseover="reanudar();" onmouseout="parar()">
+			<video>
 				<source src="../videos/gato.mp4" >
 				<source src="../videos/gato.ogv" >
 				<source src="../videos/gato.webm" >
 			</video>
 		</div>
 
-		<div id="contenedor-texto" onmousedown="reanudar2()" onmouseup="parar2()">
+		<div id="contenedor-texto" >
 			Manten presionado el mouse en esta zona para iniciar video
 		</div>
 	</body>

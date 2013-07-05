@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejercicio 23</title>
+
+		<style>
+			body {
+				background: url(../imagenes/fondo_granulado.png);
+			}
+
+			#contenedor {
+				width: 800px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			#contenido {
+				margin-left: 185px;
+			}
+
+			#menu-imagenes {
+				float: left;
+				width: 180px;
+			}
+
+			.preview {
+				cursor: hand;
+				cursor: pointer;
+				margin-bottom: 20px;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			function cambiaImagen(evento) {
+
+			}
+
+
+			window.onload = function() {
+
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<div id="contenedor">
+			<div id="menu-imagenes">
+				<img class="preview" src="../imagenes/imagen1_preview.jpg" data-src-imagen="../imagenes/imagen1.jpg" />
+				<img class="preview" src="../imagenes/imagen2_preview.jpg" data-src-imagen="../imagenes/imagen2.jpg" />
+				<img class="preview" src="../imagenes/imagen3_preview.jpg" data-src-imagen="../imagenes/imagen3.jpg" />
+				<img class="preview" src="../imagenes/imagen4_preview.jpg" data-src-imagen="../imagenes/imagen4.jpg" />
+				<img class="preview" src="../imagenes/imagen5_preview.jpg" data-src-imagen="../imagenes/imagen5.jpg" />
+			</div>
+
+			<div id="contenido">
+				<img id="imagen-normal" src="../imagenes/imagen1.jpg"  />
+			</div>
+
+		</div>
+
+	</body>
+</html>

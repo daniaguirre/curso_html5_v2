@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo Control Video con JavaScript</title>
+
+		<style>
+			body {
+				background: url(imagenes/fondo_granulado.png);
+			}
+
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				width: 600px;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			function muestraDatos(evento) {
+
+				var laImagen = evento.target;
+
+				var album = laImagen.getAttribute("data-album");
+				var tituloImagen = laImagen.getAttribute("data-titulo");
+
+				alert("ALBUM:" + album + "  TITULO:" + tituloImagen);
+			}
+
+
+			window.onload = function() {
+
+				//NOTE QUE LO SIGUIENTE SE PUEDE SIMPLIFICAR CON UN FOR, UN ARREGLO Y EL querySelectorAll
+				var imagen1 = document.querySelector("#imagen1");
+				imagen1.addEventListener("click", muestraDatos);
+
+				var imagen2 = document.querySelector("#imagen2");
+				imagen2.addEventListener("click", muestraDatos);
+
+				var imagen3 = document.querySelector("#imagen3");
+				imagen3.addEventListener("click", muestraDatos);
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<div >
+			<a href="#"> <img id="imagen1" src="imagenes/imagen1_preview.jpg" data-album="naturales" data-titulo="Un paisaje increible" /> </a>
+			<a href="#"> <img id="imagen2" src="imagenes/imagen2_preview.jpg" data-album="viajes" data-titulo="Un paisaje maravilloso" /> </a>
+			<a href="#"> <img id="imagen3" src="imagenes/imagen3_preview.jpg" data-album="viajes" data-titulo="Un paisaje magnifico" /> </a>
+		</div>
+
+	</body>
+</html>

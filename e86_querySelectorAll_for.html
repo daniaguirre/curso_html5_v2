@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo querySelectorAll</title>
+
+		<style>
+			body {
+				background: url(imagenes/fondo_granulado.png);
+			}
+
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				width: 600px;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			function muestraId(evento) {
+
+				var imagen = evento.target;
+				alert(imagen.id);
+
+			}
+
+
+			window.onload = function() {
+
+				var imagenes = document.querySelectorAll("img");
+
+				for (var numImagen = 0; numImagen < imagenes.length; numImagen++) {
+					var imagen = imagenes[numImagen];
+					imagen.addEventListener("click", muestraId);
+				}
+
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<div >
+			<img src="imagenes/imagen1_preview.jpg" id="imagen-1"/>
+			<img src="imagenes/imagen2_preview.jpg" id="imagen-2"/>
+			<img src="imagenes/imagen3_preview.jpg" id="imagen-3"/>
+			<img src="imagenes/imagen4_preview.jpg" id="imagen-4"/>
+			<img src="imagenes/imagen5_preview.jpg" id="imagen-5"/>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo Control Video con JavaScript</title>
+
+		<style>
+			body {
+				background: url(imagenes/fondo_granulado.png);
+				text-align: center;
+			}
+
+			div {
+				border-style: solid;
+				border-color: 1px solid rgb(181, 181, 181);
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
+				color: rgb(77, 77, 77);
+				background-color: rgb(238, 238, 238);
+				padding: 20px;
+				width: 800px;
+				/*esquinas redondas*/
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				/*sombras*/
+				-webkit-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				-moz-box-shadow: rgb(80,80,80) 4px 3px 7px;
+				box-shadow: rgb(80,80,80) 4px 3px 7px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			window.onload = function() {
+
+				var miAudio = document.querySelector("audio");
+				var mensaje = "";
+
+				var resultado = miAudio.canPlayType('audio/mp3');
+				mensaje = "soporte MP3:" + resultado + "\n" + mensaje;
+
+				var resultado = miAudio.canPlayType('audio/ogg');
+				mensaje = "soporte OGG:" + resultado + "\n" + mensaje;
+
+				var resultado = miAudio.canPlayType('audio/wav');
+				mensaje = "soporte WAV:" + resultado + "\n" + mensaje;
+
+				alert(mensaje);
+
+			}
+
+		</script>
+	</head>
+	<body>
+		<div  >
+			<audio controls>
+				<source src="musica/sample.ogg" >
+				<source src="musica/sample.mp3" >
+				<source src="musica/sample.wav" >
+			</audio>
+		</div>
+
+	</body>
+</html>

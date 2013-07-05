@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo uso etiqueta de Audio</title>
+		<style>
+			div {
+				margin-top: 40px;
+				margin-left: auto;
+				margin-right: auto;
+				width: 500px;
+			}
+
+		</style>
+
+		<script>
+			window.onload = function() {
+				//se obtiene el reproductor de audio
+				var reproductorAudio = document.querySelector("audio");
+
+				//le indicamos que queremos escuchar al evento ended
+				reproductorAudio.addEventListener("ended", function() {
+
+					alert("termina cancion");
+
+				});
+			}
+		</script>
+
+	</head>
+	<body>
+		<div>
+			<audio controls>
+				<source src="musica/sample.mp3" >
+				<source src="musica/sample.ogg">
+				<source src="musica/sample.wav">
+			</audio>
+		</div>
+	</body>
+</html>

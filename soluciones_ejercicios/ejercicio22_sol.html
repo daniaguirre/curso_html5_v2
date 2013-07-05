@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejercicio 22</title>
+		<style>
+			body {
+				background: url("../imagenes/fondo_granulado.png");
+			}
+
+			div {
+				margin-top: 40px;
+				margin-left: auto;
+				margin-right: auto;
+				width: 500px;
+				text-align: center;
+				padding: 20px;
+				background-color: white;
+				/*sombras*/
+				-webkit-box-shadow: rgb(0, 0, 0) 4px 3px 7px;
+				-moz-box-shadow: rgb(0, 0, 0) 4px 3px 7px;
+				box-shadow: rgb(0, 0, 0) 4px 3px 7px;
+				/*esquinas redondas*/
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+			}
+
+		</style>
+
+		<script>
+			
+			window.onload = function() {
+
+				//se obtiene el reproductor de audio
+				var reproductorAudio = document.querySelector("audio");
+
+				//le indicamos que queremos escuchar al evento ended
+				reproductorAudio.addEventListener("ended", function() {
+
+					//cuando se termine el video, cambia la imagen
+					var cajaAnuncio = document.querySelector("#anuncio");
+					cajaAnuncio.src = "../imagenes/anuncio2.jpg";
+
+				});
+
+			}
+		</script>
+
+	</head>
+	<body>
+		<div>
+			<audio controls>
+				<source src="../musica/sample.mp3" >
+				<source src="../musica/sample.ogg">
+				<source src="../musica/sample.wav">
+			</audio>
+		</div>
+
+		<div >
+			<img id="anuncio" src="../imagenes/anuncio1.jpg" />
+		</div>
+	</body>
+</html>

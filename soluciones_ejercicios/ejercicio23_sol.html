@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejercicio 23</title>
+
+		<style>
+			body {
+				background: url(../imagenes/fondo_granulado.png);
+			}
+
+			#contenedor {
+				width: 800px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			#contenido {
+				margin-left: 185px;
+			}
+
+			#menu-imagenes {
+				float: left;
+				width: 180px;
+			}
+
+			.preview {
+				cursor: hand;
+				cursor: pointer;
+				margin-bottom: 20px;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			function cambiaImagen(evento) {
+				var imagen = evento.target;
+				var nuevaRuta = imagen.getAttribute("data-src-imagen");
+
+				var imagenNormal = document.querySelector("#imagen-normal");
+				imagenNormal.src = nuevaRuta;
+
+			}
+
+
+			window.onload = function() {
+				var imagenes = document.querySelectorAll(".preview");
+
+				for (var numImagen = 0; numImagen < imagenes.length; numImagen++) {
+					var imagen = imagenes[numImagen];
+					imagen.addEventListener("click", cambiaImagen);
+				}
+
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<div id="contenedor">
+			<div id="menu-imagenes">
+				<img class="preview" src="../imagenes/imagen1_preview.jpg" data-src-imagen="../imagenes/imagen1.jpg" />
+				<img class="preview" src="../imagenes/imagen2_preview.jpg" data-src-imagen="../imagenes/imagen2.jpg" />
+				<img class="preview" src="../imagenes/imagen3_preview.jpg" data-src-imagen="../imagenes/imagen3.jpg" />
+				<img class="preview" src="../imagenes/imagen4_preview.jpg" data-src-imagen="../imagenes/imagen4.jpg" />
+				<img class="preview" src="../imagenes/imagen5_preview.jpg" data-src-imagen="../imagenes/imagen5.jpg" />
+			</div>
+
+			<div id="contenido">
+				<img id="imagen-normal" src="../imagenes/imagen1.jpg"  />
+			</div>
+
+		</div>
+
+	</body>
+</html>

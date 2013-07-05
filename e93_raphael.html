@@ -1,0 +1,43 @@
+<!doctype HTML >
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<style type="text/css">
+			svg {
+				border-style: solid;
+			}
+		</style>
+
+		<script src="scripts/librerias/raphael.js"></script>
+		<script>
+			function saludar() {
+				alert("hola");
+			}
+
+
+			window.onload = function() {
+				alert("ahora dibuja");
+				var lienzo = Raphael("zona-dibujo", 320, 200);
+
+				//X,Y, RADIO
+				var circulo1 = lienzo.circle(60, 60, 50);
+				// relleno del circulo
+				circulo1.attr("fill", "red");
+
+				// linea del circulo
+				circulo1.attr("stroke", "black");
+
+				circulo1.click(saludar)
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<div id="zona-dibujo">
+
+		</div>
+
+	</body>
+</html>
