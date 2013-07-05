@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>g·Raphaël pastel</title>
+		<script src="javascript/librerias/raphael-min.js"></script>
+		<script src="javascript/librerias/graphael-min.js"></script>
+		<script src="javascript/librerias/gpie-min.js"></script>
+		<script>
+			window.onload = function() {
+
+				var lienzo = Raphael("lienzo", 800, 400);
+
+				//pintamos un titulo
+				lienzo.text(320, 70, "Gráfica pastel").attr({
+					font : "20px sans-serif"
+				});
+
+				//DEFINIMOS LA GRAFICA
+
+				//definimos los arreglos de valores, etiquetas y colores
+				var porcentajeLenguajes = [55.5, 14.5, 20, 10];
+				var lenguajes = ["%%.%% java", "%%.%% C", "%%.%% python", "%%.%% otros"];
+				var colores = ["blue", "red", "yellow", "pink"];
+				//definimos el objeto de opciones
+				var opciones = {
+					init : true,
+					legend : lenguajes
+					//colors:colores
+				}
+
+				//cx=320, cy=240,  radio=150, valores grafica, opciones
+				lienzo.piechart(320, 240, 150, porcentajeLenguajes, opciones);
+			};
+
+		</script>
+
+	</head>
+	<body >
+		<div id="lienzo"></div>
+	</body>
+</html>
