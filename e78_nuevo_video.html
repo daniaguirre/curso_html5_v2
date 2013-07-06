@@ -38,15 +38,15 @@
 				var miVideo = document.querySelector("video");
 
 				//determinamos cual es el formato soportado
-				if (miVideo.canPlayType('video/mp4')) {
+				if (miVideo.canPlayType('video/mp4') !== "") {
 					miVideo.src = "videos/gato.mp4";
 				}
 
-				if (miVideo.canPlayType('video/ogg')) {
+				if (miVideo.canPlayType('video/ogg') !== "") {
 					miVideo.src = "videos/gato.ogv";
 				}
 
-				if (miVideo.canPlayType('video/webm')) {
+				if (miVideo.canPlayType('video/webm') !== "") {
 					miVideo.src = "videos/gato.webm";
 				}
 
@@ -70,9 +70,9 @@
 	<body>
 		<div class="video-player" >
 			<video controls>
-				<source src="videos/oso.mp4" >
-				<source src="videos/oso.ogg" >
-				<source src="videos/oso.webm" >
+				<source src="videos/gadget.mp4" >
+				<source src="videos/gadget.ogg" >
+				<source src="videos/gadget.webm" >
 			</video>
 		</div>
 	</body>

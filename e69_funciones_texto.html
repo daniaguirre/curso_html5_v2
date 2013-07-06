@@ -22,7 +22,7 @@
 			document.write("<b>" + nombre + "</b> contiene el texto:<b>" + textoABuscar + "</b> en la posicion: " + indiceSubcadena + " (indexOf)");
 			document.write("<br/>");
 
-			//IGUAL QUE indexOf, PERO BUSCA DE IZQUIERDA A DERECHA
+			//IGUAL QUE indexOf, PERO BUSCA DE DERECHA A IZQUIERDA
 			indiceSubcadena = nombre.lastIndexOf(textoABuscar);
 			document.write("<b>" + nombre + "</b> contiene el texto:<b>" + textoABuscar + "</b> en la posicion: " + indiceSubcadena + " (lastIndexOf)");
 			document.write("<br/>");
@@ -53,6 +53,7 @@
 
 			//OBTENER UNA PARTE DE LA CADENA
 			var nombre2 = "Ismael Robles";
+			//NOTE QUE REGRESA ism!
 			var subcadena = nombre2.substring(0, 3);
 			//INDICE INICIO, INDICE FIN
 			document.write("Texto original: <b>" + nombre2 + "</b>");

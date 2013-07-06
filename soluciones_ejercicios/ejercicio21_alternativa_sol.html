@@ -37,15 +37,15 @@
 				var miVideo = document.querySelector("video");
 
 				//determinamos cual es el formato soportado
-				if (miVideo.canPlayType('video/mp4')) {
+				if (miVideo.canPlayType('video/mp4') !== "") {
 					miVideo.src = "../videos/" + nombreVideo + ".mp4";
 				}
 
-				if (miVideo.canPlayType('video/ogg')) {
+				if (miVideo.canPlayType('video/ogg') !== "") {
 					miVideo.src = "../videos/" + nombreVideo + ".ogg";
 				}
 
-				if (miVideo.canPlayType('video/webm')) {
+				if (miVideo.canPlayType('video/webm') !== "") {
 					miVideo.src = "../videos/" + nombreVideo + ".webm";
 				}
 

@@ -51,13 +51,18 @@
 			document.write("<br/>");
 
 			//REMOVER
+			document.write("arreglo:<b>" + nombres + "</b>");
+			document.write("<br/>");
 			nombres.pop();
 			document.write("arreglo(pop):<b>" + nombres + "</b>");
 			document.write("<br/>");
 			document.write("<br/>");
 
 			//REMOVER 2
+			document.write("arreglo:<b>" + nombres + "</b>");
+			document.write("<br/>");
 			//inicio, cuantos a remover
+			//NOTE QUE SOLO REMUEVE 0 Y 1
 			nombres.splice(0, 2)
 			document.write("arreglo(splice):<b>" + nombres + "</b>");
 			document.write("<br/>");
@@ -65,6 +70,7 @@
 
 			//CORTAR ARREGLOS, igual que substring
 			//indice inicio , indice final
+			//NOTE QUE EL ARREGLO SE FORMA DE [1] SOLAMENTE
 			var nuevoArreglo = nombres.slice(1, 2);
 			document.write("arreglo:<b>" + nombres + "</b>");
 			document.write("<br/>");
