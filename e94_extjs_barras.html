@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo grafica barras en ExtJS4</title>
+		<meta charset="UTF-8" />
+
+		<link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.1.0-gpl/resources/css/ext-all.css">
+
+		<script src="http://cdn.sencha.io/ext-4.1.0-gpl/ext-all.js"></script>
+
+		<style>
+			#contenedor-barras {
+				width: 550px;
+				height: 400px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			h1, h2 {
+				text-align: center;
+			}
+
+			h1 {
+				font-size: 25px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			window.onload = function() {
+
+				//se crea un arreglo de objetos
+				//cada uno de estos objetos contiene la informacion que se va usar
+				//para graficar
+				//se definen siempre 2 propiedades, "nombreBarra" (nombre de la columna) y "valorBarra" (valor de la columna)
+				var datosBarras = [{
+					nombreBarra : 'Chrome',
+					valorBarra : 44.3
+				}, {
+					nombreBarra : 'IE',
+					valorBarra : 22.2
+				}, {
+					nombreBarra : 'Firefox',
+					valorBarra : 18.3
+				}, {
+					nombreBarra : 'Opera',
+					valorBarra : 9.1
+				}, {
+					nombreBarra : 'Otros',
+					valorBarra : 6.1
+				}];
+
+				//creamos un objeto de EXTJS que sirve de contenedor para el arreglo de datos
+				var almacenDatos = Ext.create('Ext.data.JsonStore', {
+					fields : ['nombreBarra', 'valorBarra'],
+					data : datosBarras
+				});
+
+				//INICIA LA CONSTRUCCION DE LA GRAFICA DE BARRAS
+				Ext.create('Ext.chart.Chart', {
+					renderTo : "contenedor-barras", //queremos que se pinte en el div con id contenedor-barras
+					width : 500, //ancho de la grafica
+					height : 300, //alto de la grafica
+					animate : true, //genera una animacion al cargar la pagina
+					store : almacenDatos, //el objeto que guarda los datos para esta grafica
+					//CONFIGURACION DEL EJEJ Y
+					axes : [{
+						type : 'Numeric', //casi siempre es Numeric (datos)
+						position : 'left', //dejar siempre como left. right se usa bajo circunstancias muy particulares
+						fields : 'valorBarra', //que propiedad del objeto datosBarras contiene los valores(numericos) de las barras
+						title : 'Usuarios (porcentaje)', //el titulo que aparece sobre el eje Y
+						grid : true //indica si queremos que aparezca unas lineas horizontales
+					},
+					//CONFIGURACION DEL EJE X
+					{
+						type : 'Category', //casi siempre es Category
+						position : 'bottom', //donde se ubica el titulo del eje X, otro valor es top
+						fields : 'nombreBarra', //que campo del objeto datosBarras contiene el nombre de las columnas
+						title : 'Navegadores' //titulo del EJE Y
+					}],
+					//CONFIGURACION DEL TIPO DE GRAFICA: COLUMNAS, AREA O LINEA
+					series : [{
+						type : 'column', //otros valores posibles son area y line
+						axis : 'left', //dejar como left, right se usa bajo circunstancias muy particulares
+						highlight : true, //habilita una animacion que pone un borde azul alrededor de la columna
+
+						//CONFIGURACION DE ANIMACIONES PARA EL RATON
+						tips : {
+							trackMouse : true, //hace que el globo azul de mensajes siga al raton
+							width : 140, //el ancho del globo azul
+							height : 28, //alto del globo azul
+							//configuracion del texto que debe mostrar el globo azul
+							renderer : function(storeItem, item) {
+								this.setTitle(storeItem.get('nombreBarra') + ': ' + storeItem.get('valorBarra') + "%");
+							}
+						},
+						//CONFIGURACION DE COMO SE VAN A MOSTRAR LOS DATOS
+						label : {
+							display : 'insideEnd',
+							'text-anchor' : 'middle', //alineacion de los textos sobre las barras
+							field : 'valorBarra',
+							renderer : Ext.util.Format.numberRenderer('0.1%'), //formato de los valores numericos a mostrar
+							orientation : 'horizontal', // la direccion del texto dentro de las barras, otro valor es vertical
+						},
+						xField : 'nombreBarra', //que campo del objeto datosBarras es para el eje x
+						yField : 'valorBarra' //que campo del objeto datosBarras es para el eje y
+					}]
+				});
+
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<h1>Uso de los navegadores</h1>
+		<h2>(coloca el mouse sobre las columnas)</h2>
+		<div id="contenedor-barras">
+
+		</div>
+
+	</body>
+</html>

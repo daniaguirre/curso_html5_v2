@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo grafica pastel en ExtJS4</title>
+		<meta charset="UTF-8" />
+
+		<link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.1.0-gpl/resources/css/ext-all.css">
+
+		<script src="http://cdn.sencha.io/ext-4.1.0-gpl/ext-all.js"></script>
+
+		<style>
+			#contenedor-pastel {
+				width: 600px;
+				height: 400px;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+
+			h1, h2 {
+				text-align: center;
+			}
+
+			h1 {
+				font-size: 25px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			window.onload = function() {
+
+				//se crea un arreglo de objetos
+				//cada uno de estos objetos contiene la informacion que se va usar
+				//para graficar
+				//se definen siempre 2 propasteldades, "nombreRebanada" (nombre de la rebanada) y "valorRebanada" (valor de la rebanada del pastel)
+				var datosPastel = [{
+					nombreRebanada : 'Chrome',
+					valorRebanada : 44.3
+				}, {
+					nombreRebanada : 'IE',
+					valorRebanada : 22.2
+				}, {
+					nombreRebanada : 'Firefox',
+					valorRebanada : 18.3
+				}, {
+					nombreRebanada : 'Opera',
+					valorRebanada : 9.1
+				}, {
+					nombreRebanada : 'Otros',
+					valorRebanada : 6.1
+				}];
+
+				var almacenDatos = Ext.create('Ext.data.JsonStore', {
+					fields : ['nombreRebanada', 'valorRebanada'],
+					data : datosPastel
+				});
+
+				Ext.create('Ext.chart.Chart', {
+					renderTo : "contenedor-pastel", //el id del DIV contenedor de esta grafica	
+					width : 500, //ancho grafica
+					height : 350, //alto grafica
+					animate : true, //habilta una animacion al cargar la pagina
+					store : almacenDatos, //el objeto que contiene los datos de la grafica
+					//CONFIGUARCION DE LOS DATOS DE LA GRAFICA
+					theme : 'Base:gradients',
+					series : [{
+						type : 'pie', //dejar como pie siempre
+						angleField : 'valorRebanada', //que campo del objeto datosPastel se va usar para llenar las rebanadas
+						showInLegend : true, //muestra un globo azul con los datos de la rebanada al poner el raton encima
+						//CONFIGURA EL GLOBO AZUL DE MENSAJES
+						tips : {
+							trackMouse : true, //hace que el globo azul siga al raton
+							width : 140, //ancho del globo azul
+							height : 28, //alto del globo azul
+							//funcion para mostrar el texto del globo azul
+							renderer : function(storeItem, item) {
+
+								//muestra el texto del globo azul
+								this.setTitle(storeItem.get('nombreRebanada') + ': ' + storeItem.get('valorRebanada') + '%');
+							}
+						},
+						//CONFIGURACION DE ANIMACION DE LAS REBANADAS
+						highlight : {
+							segment : {
+								margin : 20 //cuanto se separa la rebanada al poner el raton encima
+							}
+						},
+						//CONFIGURACION DE LOS TEXTOS DE LAS REBANADAS
+						label : {
+							field : 'nombreRebanada', //que campo del objeto datosPastel se usa para los nombres en al rebanada
+							display : 'rotate', //hace que el texto aparezca rotado
+							contrast : true, //habilita un cambio ligero en el color de texto para hacer contraste con la rebanada
+							font : '18px Arial' //tam y tipo de fuente de los textos en la rebanada
+						}
+					}]
+				});
+
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<h1>Uso de los navegadores</h1>
+		<h2>(coloca el mouse sobre las rebanadas)</h2>
+		<div id="contenedor-pastel">
+
+		</div>
+
+	</body>
+</html>

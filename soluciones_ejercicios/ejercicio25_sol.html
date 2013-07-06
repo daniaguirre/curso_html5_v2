@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ejercicio 25</title>
+		<meta charset="UTF-8" />
+
+		<link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.1.0-gpl/resources/css/ext-all.css">
+
+		<script src="http://cdn.sencha.io/ext-4.1.0-gpl/ext-all.js"></script>
+
+		<style>
+			#contenedor-pastel, #contenedor-barras {
+				width: 600px;
+				height: 400px;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+
+			h1, h2 {
+				text-align: center;
+			}
+
+			h1 {
+				font-size: 25px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			window.onload = function() {
+
+				var datos = [{
+					nombre : 'Lunes',
+					valor : 13.5
+				}, {
+					nombre : 'Martes',
+					valor : 16.0
+				}, {
+					nombre : 'Miercoles',
+					valor : 20.1
+				}, {
+					nombre : 'Jueves',
+					valor : 17.5
+				}, {
+					nombre : 'Viernes',
+					valor : 30.9
+				}];
+
+				var almacenDatos = Ext.create('Ext.data.JsonStore', {
+					fields : ['nombre', 'valor'],
+					data : datos
+				});
+
+				Ext.create('Ext.chart.Chart', {
+					renderTo : "contenedor-pastel",
+					width : 500,
+					height : 350,
+					animate : true,
+					store : almacenDatos,
+
+					theme : 'Base:gradients',
+					series : [{
+						type : 'pie',
+						angleField : 'valor',
+						showInLegend : true,
+
+						tips : {
+							trackMouse : true,
+							width : 140,
+							height : 28,
+							renderer : function(storeItem, item) {
+								this.setTitle(storeItem.get('nombre') + ': ' + storeItem.get('valor') + '%');
+							}
+						},
+						highlight : {
+							segment : {
+								margin : 20
+							}
+						},
+						label : {
+							field : 'nombre',
+							display : 'rotate',
+							contrast : true,
+							font : '18px Arial'
+						}
+					}]
+				});
+
+				Ext.create('Ext.chart.Chart', {
+					renderTo : "contenedor-barras",
+					width : 500,
+					height : 350,
+					animate : true,
+					store : almacenDatos,
+					axes : [{
+						type : 'Numeric',
+						position : 'left',
+						fields : 'valor',
+						title : 'Productos (porcentaje)',
+						grid : true
+					}, {
+						type : 'Category',
+						position : 'bottom',
+						fields : 'nombre',
+						title : 'Dias'
+					}],
+
+					series : [{
+						type : 'column',
+						axis : 'left',
+						highlight : true,
+
+						tips : {
+							trackMouse : true,
+							width : 140,
+							height : 28,
+
+							renderer : function(storeItem, item) {
+								this.setTitle(storeItem.get('nombre') + ': ' + storeItem.get('valor') + "%");
+							}
+						},
+						label : {
+							display : 'insideEnd',
+							'text-anchor' : 'middle',
+							field : 'valor',
+							renderer : Ext.util.Format.numberRenderer('0.1%'),
+							orientation : 'horizontal',
+						},
+						xField : 'nombre',
+						yField : 'valor'
+					}]
+				});
+
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>Ventas de la Semana</h1>
+		<h2>(coloca el mouse sobre las graficas)</h2>
+		<div id="contenedor-barras"></div>
+		<div id="contenedor-pastel">
+
+		</div>
+
+	</body>
+</html>

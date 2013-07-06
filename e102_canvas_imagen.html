@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			canvas {
+				border-style: solid;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+
+				var elCanvas = document.querySelector("canvas");
+				var contexto = elCanvas.getContext("2d");
+
+				var imagen = new Image();
+				imagen.src = "imagenes/grumpy_cat.jpg";
+
+				imagen.onload = function() {
+
+					//COMENTARIO C2
+					//alert("ANCHO:" + imagen.width + ", ALTO:" + imagen.height);
+
+					//COMENTARIO C3
+					//elCanvas.width = 500;
+					//elCanvas.height = 500;
+					
+					//COMENTARIO C5
+					//elCanvas.width = imagen.width;
+					//elCanvas.height = imagen.height;
+					//contexto.drawImage(imagen, 0, 0);
+
+					//posX, posY
+					contexto.drawImage(imagen, 10, 50);
+
+					//COMENTARIO C4	
+					//elCanvas.width = 500;
+					//elCanvas.height = 500;
+
+					//COMENTARIO C1
+					//posX, posY, ANCHO, ALTO
+					//contexto.drawImage(imagen, 10, 50, 200, 300);
+
+
+				}
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<canvas width="600" height="700">
+			Tu navegador no soporta Canvas
+		</canvas>
+
+	</body>
+</html>

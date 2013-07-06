@@ -1,0 +1,42 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>ejemplo rectangulo canvas</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+		</style>
+
+		<script src="javascript/librerias/pixastic.custom.js" ></script>
+
+		<script>
+			window.onload = function() {
+
+				//obtenemos la imagen
+				var imagen = document.querySelector("#imagen1");
+
+				//procesamos la imagen con pixastic
+				var imagenDespues = Pixastic.process(imagen, "desaturate");
+
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<div>
+			<h1> Imagen original </h1>
+			<img src="imagenes/imagen1.jpg"/>
+		</div>
+
+		<div>
+			<h1> Escala de Grises (desaturate) </h1>
+			<img id="imagen1" src="imagenes/imagen1.jpg"/>
+		</div>
+
+	</body>
+</html>

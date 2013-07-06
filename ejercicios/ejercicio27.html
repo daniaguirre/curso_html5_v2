@@ -1,0 +1,54 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+		</style>
+
+		<script src="../javascript/librerias/pixastic.custom.js" ></script>
+
+		<script>
+			window.onload = function() {
+
+				var imagen = document.querySelector("img");
+				var imagenDespues = null;
+
+				boton = document.querySelector("#boton-gris");
+				boton.addEventListener("click", function() {
+					imagenDespues = Pixastic.process(imagen, "desaturate");
+				});
+
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<div>
+			<img id="imagen"  src="../imagenes/imagen7.jpg"/>
+		</div>
+		<div>
+			<button id="boton-gris">
+				Grises
+			</button>
+			<button id="boton-noise">
+				Noise
+			</button>
+			<button id="boton-sepia">
+				Sepia
+			</button>
+			<button id="boton-solarize">
+				Solarize
+			</button>
+			<button id="boton-reset">
+				RESET
+			</button>
+		</div>
+
+	</body>
+</html>

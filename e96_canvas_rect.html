@@ -1,0 +1,47 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>ejemplo rectangulo canvas</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+			
+			canvas {
+				border-style: solid;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+
+				//Obtenemos el objeto canvas
+				var elCanvas = document.querySelector("canvas");
+				//obtenemos el contexto (2d)
+				var contexto = elCanvas.getContext("2d");
+				
+				//X,Y, ANCHO, ALTO
+				contexto.rect(188, 50, 200, 100);
+				contexto.fillStyle = "#4096ee";
+				contexto.fill();
+				//relleno
+
+				contexto.lineWidth = 7;
+				contexto.strokeStyle = '#00012';
+				contexto.stroke();
+				//borde
+
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<canvas width="400" height="400">
+
+		</canvas>
+
+	</body>
+</html>

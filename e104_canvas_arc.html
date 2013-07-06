@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo de creación de caminos</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+			
+			canvas {
+				border-style: solid;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+
+				var elCanvas = document.querySelector("canvas");
+				var contexto = elCanvas.getContext("2d");
+
+				contexto.beginPath();
+				contexto.arc(300, 300, 150, 0, (1.5*Math.PI),false);
+				contexto.stroke();
+				
+				//contexto.fillStyle = "#4096ee";
+				//contexto.fill();
+
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<canvas width="600" height="600">
+			Tu navegador no soporta Canvas
+		</canvas>
+
+	</body>
+</html>

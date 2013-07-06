@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			canvas {
+				border-style: solid;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+
+				var elCanvas = document.querySelector("canvas");
+				var contexto = elCanvas.getContext("2d");
+
+				var posX = 300;
+
+				// Create a red line in position posX
+				contexto.strokeStyle = "red";
+				contexto.moveTo(posX, 20);
+				contexto.lineTo(posX, 200);
+				contexto.stroke();
+
+				contexto.font = "40px Arial";
+
+				// right
+				contexto.textAlign = "right";
+				contexto.fillText("textAlign=right", posX, 60);
+
+				//left
+				contexto.textAlign = "left";
+				contexto.fillText("textAlign=left", posX, 120);
+
+				//center
+				contexto.textAlign = "center";
+				contexto.fillText("textAlign=center", posX, 180);
+
+				contexto.fillText("Este es un texto centrado", 350, 340);
+
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<canvas width="700" height="400">
+			Tu navegador no soporta Canvas
+		</canvas>
+
+	</body>
+</html>

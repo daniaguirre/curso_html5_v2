@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejemplo de creación de caminos</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			canvas {
+				border-style: solid;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+
+				//Obtenemos el objeto canvas
+				var elCanvas = document.querySelector("canvas");
+				//obtenemos el contexto (2d)
+				var contexto = elCanvas.getContext("2d");
+
+				// la cara
+				contexto.strokeStyle = '#0000FF';
+				contexto.fillStyle = '#FFFF00';
+				contexto.lineWidth = 4;
+				contexto.beginPath();
+				contexto.arc(300, 300, 150, 0 * Math.PI, 2 * Math.PI, true);
+				contexto.closePath();
+				contexto.stroke();
+				contexto.fill();
+
+				//la sonrisa
+				contexto.strokeStyle = '#FF0000';
+				contexto.lineWidth = 2;
+				contexto.beginPath();
+				contexto.arc(300, 285, 120, 0.2 * Math.PI, 0.8 * Math.PI, false);
+				//contexto.closePath();
+				contexto.stroke();
+				//contexto.fill();
+
+				// ojo izquierdo
+				contexto.strokeStyle = '#000000';
+				contexto.fillStyle = '#000000';
+				contexto.beginPath();
+				contexto.arc(240, 260, 20, 0 * Math.PI, 2 * Math.PI, false);
+				contexto.closePath();
+				contexto.stroke();
+				contexto.fill();
+
+				//ojo derecho
+				contexto.strokeStyle = '#000000';
+				contexto.fillStyle = '#000000';
+				contexto.beginPath();
+				contexto.arc(350, 260, 20, 0 * Math.PI, 2 * Math.PI, false);
+				contexto.closePath();
+				contexto.stroke();
+				contexto.fill();
+
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<canvas width="600" height="600">
+			Tu navegador no soporta Canvas
+		</canvas>
+
+	</body>
+</html>

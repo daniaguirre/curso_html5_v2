@@ -1,0 +1,179 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>ejemplo rectangulo canvas</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			div {
+				float: left;
+				margin-left: 30px;
+			}
+
+		</style>
+
+		<script src="javascript/librerias/pixastic.custom.js" ></script>
+
+		<script>
+			window.onload = function() {
+
+				// ------------- DESATURATE----------------------
+				//obtenemos la imagen
+				var imagen1 = document.querySelector("#imagen1");
+
+				//escuchamos cuando el raton esta encima de la imagen
+				imagen1.addEventListener("mouseover", function() {
+
+					//transformamos la imagen
+					var imagen1_despues = Pixastic.process(imagen1, "desaturate");
+
+					//la nueva imagen, se le agrega el evento mouseout
+					imagen1_despues.addEventListener("mouseout", function() {
+						//si se sale de la imagen, se revierten los cambios
+						Pixastic.revert(imagen1_despues);
+
+					});
+
+				});
+
+				// ------------- GLOW----------------------
+				//obtenemos la imagen
+				var imagen2 = document.querySelector("#imagen2");
+
+				//escuchamos cuando el raton esta encima de la imagen
+				imagen2.addEventListener("mouseover", function() {
+
+					//transformamos la imagen
+					var imagen2_despues = Pixastic.process(imagen2, "glow", {
+						amount : 0.5 //cuanto brillo en la imagen
+					});
+
+					//la nueva imagen, se le agrega el evento mouseout
+					imagen2_despues.addEventListener("mouseout", function() {
+						//si se sale de la imagen, se revierten los cambios
+						Pixastic.revert(imagen2_despues);
+
+					});
+
+				});
+
+				// ------------- NOISE ----------------------
+				//obtenemos la imagen
+				var imagen3 = document.querySelector("#imagen3");
+
+				//escuchamos cuando el raton esta encima de la imagen
+				imagen3.addEventListener("mouseover", function() {
+
+					//transformamos la imagen
+					var imagen3_despues = Pixastic.process(imagen3, "noise", {
+						amount : 0.9, //cuantos puntitos de ruido , entre 0 y 1
+						strength : 1 //que tan intenso debe ser el ruido
+					});
+
+					//la nueva imagen, se le agrega el evento mouseout
+					imagen3_despues.addEventListener("mouseout", function() {
+						//si se sale de la imagen, se revierten los cambios
+						Pixastic.revert(imagen3_despues);
+
+					});
+
+				});
+
+				// ------------- EMBOSS ----------------------
+				//obtenemos la imagen
+				var imagen4 = document.querySelector("#imagen4");
+
+				//escuchamos cuando el raton esta encima de la imagen
+				imagen4.addEventListener("mouseover", function() {
+
+					//transformamos la imagen
+					var imagen4_despues = Pixastic.process(imagen4, "emboss", {
+						direction : "topright", //otros valores son  "topleft", "top", "right", "bottomright", "bottom", "bottomleft" y "left".
+						greyLevel : 200 //la intesidad del gris de 0 a 255
+					});
+
+					//la nueva imagen, se le agrega el evento mouseout
+					imagen4_despues.addEventListener("mouseout", function() {
+						//si se sale de la imagen, se revierten los cambios
+						Pixastic.revert(imagen4_despues);
+
+					});
+
+				});
+
+				// ------------- SEPIA ----------------------
+				//obtenemos la imagen
+				var imagen5 = document.querySelector("#imagen5");
+
+				//escuchamos cuando el raton esta encima de la imagen
+				imagen5.addEventListener("mouseover", function() {
+
+					//transformamos la imagen
+					var imagen5_despues = Pixastic.process(imagen5, "sepia");
+
+					//la nueva imagen, se le agrega el evento mouseout
+					imagen5_despues.addEventListener("mouseout", function() {
+						//si se sale de la imagen, se revierten los cambios
+						Pixastic.revert(imagen5_despues);
+
+					});
+
+				});
+
+				// ------------- SOLARIZE ----------------------
+				//obtenemos la imagen
+				var imagen6 = document.querySelector("#imagen6");
+
+				//escuchamos cuando el raton esta encima de la imagen
+				imagen6.addEventListener("mouseover", function() {
+
+					//transformamos la imagen
+					var imagen6_despues = Pixastic.process(imagen6, "solarize");
+
+					//la nueva imagen, se le agrega el evento mouseout
+					imagen6_despues.addEventListener("mouseout", function() {
+						//si se sale de la imagen, se revierten los cambios
+						Pixastic.revert(imagen6_despues);
+
+					});
+
+				});
+
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<div>
+			<h1> Escala de Grises (desaturate) </h1>
+			<img id="imagen1" src="imagenes/imagen1.jpg"/>
+		</div>
+		<div>
+			<h1> Glow </h1>
+			<img id="imagen2" src="imagenes/imagen2.jpg"/>
+		</div>
+		<div>
+			<h1> Noise </h1>
+			<img id="imagen3" src="imagenes/imagen3.jpg"/>
+		</div>
+		<div>
+			<h1> Emboss </h1>
+			<img id="imagen4" src="imagenes/imagen4.jpg"/>
+		</div>
+		<div>
+			<h1> Sepia </h1>
+			<img id="imagen5"  src="imagenes/imagen5.jpg"/>
+		</div>
+
+		<div>
+			<h1> Solarize </h1>
+			<img id="imagen6"  src="imagenes/imagen6.jpg"/>
+		</div>
+
+	</body>
+</html>

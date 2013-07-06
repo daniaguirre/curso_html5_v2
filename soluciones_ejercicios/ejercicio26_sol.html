@@ -1,0 +1,70 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			canvas {
+				border-style: solid;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+
+				var elCanvas = document.querySelector("canvas");
+				var contexto = elCanvas.getContext("2d");
+
+				var imagen = new Image();
+				imagen.src = "../imagenes/grumpy_cat.jpg";
+
+				imagen.onload = function() {
+
+					//ajustamos el tama del canvas al tam de la imagen
+					elCanvas.width = imagen.width;
+					elCanvas.height = imagen.height;
+
+					//calculamos el centro del plano X
+					var posX = elCanvas.width / 2;
+					//dibujamos la imagen
+					contexto.drawImage(imagen, 0, 0);
+
+					//definimos la fuente
+					contexto.font = "70px Arial";
+					//le decimos que centre el texto
+					contexto.textAlign = "center"
+					//queremos que el texto sea de color blanco
+					contexto.fillStyle = "white";
+
+					contexto.fillText("I had fun once", posX, 75);
+					contexto.fillText("It was awful", posX, elCanvas.height - 10);
+				}
+				
+				var enlaceGuardar = document.querySelector("#link-guardar");
+				enlaceGuardar.addEventListener("click", function(evento) {
+
+					var elEnlace = evento.target;
+					elEnlace.href = elCanvas.toDataURL();
+					elEnlace.download = "mi_meme.png";
+
+				});
+
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<canvas width="600" height="700">
+			Tu navegador no soporta Canvas
+		</canvas>
+		<p>
+			<a id="link-guardar" href="#">Guardar la imagen!</a>
+		</p>
+
+	</body>
+</html>
