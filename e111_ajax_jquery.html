@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sitio simple</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 30px;
+				border-style: solid;
+				padding: 80px;
+				width: 600px;
+			}
+
+		</style>
+
+		<script src="javascript/jquery2.js"></script>
+
+		<script>
+			function solicitaTextoServidor() {
+				//sustituye el contenido del div respuesta
+				//por lo que regrese el servidor
+				$('#respuesta').load('ajax/respuesta_texto.txt');
+			}
+
+
+			window.onload = function() {
+
+				var boton = document.querySelector("button");
+				boton.addEventListener("click", solicitaTextoServidor);
+			}
+			
+
+		</script>
+	</head>
+	<body>
+
+		<div id="respuesta">
+			<h2>Oprime el boton para cambiar este texto</h2>
+		</div>
+		<div>
+			<button>
+				Cambiar texto
+			</button>
+		</div>
+	</body>
+</html>

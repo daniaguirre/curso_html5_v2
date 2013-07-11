@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>formas</title>
+
+		<style type="text/css">
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 10px;
+				border-style: solid;
+				padding: 80px;
+				width: 700px;
+			}
+			
+			form{
+				border-style: solid;
+				border-color: blue;
+				padding:20px;
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+		<div >
+
+			<p>
+				seguro Social(este campo no se envia)
+				<input type="text" name="seguro" />
+			</p>
+
+			<form method="get" action="procesa.txt">
+
+				<p>
+					Nombre (ejemplo input text)
+					<input type="text" name="nombre" />
+				</p>
+
+				<p>
+					Password (ejemplo input password):
+					<input type="password" name="password">
+				</p>
+
+				<fieldset>
+					<legend>
+						Domicilio(ejemplo legend):
+					</legend>
+					Calle:
+					<input type="text" name="calle"/>
+					<br>
+					Colonia:
+					<input type="text" name="colonia"/>
+					<br>
+					Estado:
+					<input type="text" name="estado"/>
+				</fieldset>
+
+				<p>
+					Sexo (ejemplo radio button):
+					<br/>
+
+					<input type="radio" name="sexo" value="masculino" checked="checked">
+					Masculino
+
+					<input type="radio" name="sexo" value="femenino">
+					Femenino
+				</p>
+
+				<p>
+					Vehiculo (ejemplo checkbox)
+					<br/>
+
+					<input type="checkbox" name="vehiculo" value="Bicicleta">
+					Tengo bicicleta
+					<br>
+					<input type="checkbox" name="vehiculo" value="Coche" checked="checked">
+					Tengo coche
+				</p>
+
+				<p>
+					Auto preferido(ejemplo select):
+					<select>
+						<option name="autoFavorito" value="volvo">Volvo</option>
+						<option name="autoFavorito" value="saab">Saab</option>
+						<option name="autoFavorito" value="mercedes" selected="selected">Mercedes</option>
+						<option name="autoFavorito" value="audi">Audi</option>
+					</select>
+				</p>
+
+				<p>
+					Sugerencias(ejemplo textarea):
+					<textarea rows="5" cols="70" name="comentario" >Poner algun comentario aqui</textarea>
+				</p>
+
+				<input type="submit" value="Enviar(ejemplo submit)">
+
+			</form>
+
+		</div>
+	</body>
+</html>

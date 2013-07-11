@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sitio simple</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 30px;
+				border-style: solid;
+				padding: 80px;
+				width: 600px;
+			}
+
+		</style>
+
+		<script>
+			function solicitaTextoServidor(evento) {
+				var xmlhttp = new XMLHttpRequest();
+
+				//cuando el servidor responde, se genera un evento
+				//onreadystatechange
+				xmlhttp.onreadystatechange = function() {
+
+					//COMENTARIO C1
+					//alert(xmlhttp.readyState)
+					//si se encontro la ruta indicada y si la respuesta del servidor esta lista
+					if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
+
+						var cajaRespuesta = document.querySelector("#respuesta");
+
+						//obtenemos la respuesta(texto) del servidor
+						cajaRespuesta.innerHTML = xmlhttp.responseText;
+					}
+
+				}
+				//metodo GET, solicita el archivo
+				xmlhttp.open("GET", "ajax/respuesta_texto.txt", true);
+				xmlhttp.send();
+				
+				//detenemos el comportamiento por default
+				evento.preventDefault();
+
+			}
+
+
+			window.onload = function() {
+
+				var liga = document.querySelector("#liga");
+				liga.addEventListener("click", solicitaTextoServidor);
+
+			}
+		</script>
+	</head>
+	<body>
+
+		<div id="respuesta">
+			<h2>Oprime el boton para cambiar este texto</h2>
+		</div>
+		<div>
+			<a id="liga" href="mini-sitio/index.html">
+				Cambiar texto
+			</a>
+		</div>
+	</body>
+</html>

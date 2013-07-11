@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sitio simple</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 30px;
+				border-style: solid;
+				padding: 80px;
+				width: 600px;
+			}
+
+		</style>
+
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+		<script>
+			var solicitaTextoServidor = function() {
+				//sustituye el contenido del div respuesta
+				//por lo que regrese el servidor
+				$('#respuesta').load('ajax/respuesta_texto.txt');
+				
+				//COMO ES UN ANCHOR tenemos que incluir el siguiente return
+				
+				return false;
+			}
+
+			$(document).ready(function() {
+
+				$("#liga").click(solicitaTextoServidor);
+			});
+			
+			
+
+		</script>
+	</head>
+	<body>
+
+		<div id="respuesta">
+			<h2>Oprime el LINK para cambiar este texto</h2>
+		</div>
+		<div>
+			<a id="liga" href="mini-sitio/index.html">
+				Cambiar texto
+			</a>
+		</div>
+	</body>
+</html>
