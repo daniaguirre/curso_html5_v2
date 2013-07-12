@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sitio simple</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 30px;
+				padding: 80px;
+				width: 600px;
+			}
+
+		</style>
+
+		<script>
+
+			localStorage.setItem("miNumero", 234);
+			
+			var miNumeroCadena = localStorage.getItem("miNumero");
+			var miNumero = parseInt(miNumeroCadena);
+			
+			alert(miNumero);
+			
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

@@ -34,7 +34,37 @@
 				text-align: center;
 			}
 
+			/* --- DEFINIMOS LOS ESTILOS PARA LOS INPUTS CUANDO ESTOS SON VALIDOS Y NO VALIDOS*/
+
+			input:required:invalid, input:focus:invalid {
+				background-image: url(imagenes/invalido.png);
+				background-position: right top;
+				background-repeat: no-repeat;
+			}
+
+			input:required:valid {
+				background-image: url(imagenes/valido.png);
+				background-position: right top;
+				background-repeat: no-repeat;
+			}
+
 		</style>
+
+		<script>
+			window.onload = function() {
+
+				var elEmail = document.querySelector("#email");
+				//mostramos como cambiar el mensaje de error para el campo email
+				elEmail.addEventListener("invalid", function() {
+					//este evento solo puede ocurrir al hacer el submit
+					if (elEmail.validity.valid === false) {
+
+						elEmail.setCustomValidity("Debes introducir un email en formato correcto");
+					}
+				});
+			}
+
+		</script>
 
 	</head>
 	<body>
@@ -50,7 +80,7 @@
 
 				<p>
 					<label>email(required):</label>
-					<input type="email" name="email" required placeholder="Introduce email">
+					<input id="email" type="email" name="email" required placeholder="Introduce email">
 				</p>
 
 				<p>
@@ -76,9 +106,9 @@
 				</p>
 
 				<p>
-					<label>Volumen (range)</label>
-					<!-- range tiene muy poco soporte todavia, usar con precacucion -->
-					<input type="range" size="2" name="volumen" min="1" max="5" value="3">
+					<label>edad(number):</label>
+					<input type="number" name="edad" min="18" max="99" value="21">
+					<br>
 				</p>
 
 				<p class="boton">

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sitio simple</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 30px;
+				padding: 80px;
+				width: 600px;
+			}
+
+		</style>
+
+		<script>
+			alert("nombre:" + localStorage.getItem("nombre") + ", curso:" + localStorage.getItem("curso"));
+
+			if ( typeof (Storage) !== "undefined") {
+				alert("el objeto Storage es soportado");
+			} else {
+				alert("el objeto Storage NO es soportado");
+			}
+
+			localStorage.setItem("nombre", "Ismael");
+			localStorage.setItem("curso", "HTML5");
+
+			window.onload = function() {
+
+				var boton = document.querySelector("button");
+				boton.addEventListener("click", function() {
+
+					//remueve el item nombre
+					localStorage.removeItem("nombre");
+
+					//borra todo
+					//----- COMENTARIO C1: con clear borramos todo
+					//localStorage.clear();
+					alert("se ha borrado la propiedad nombre");
+				});
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<div id="respuesta">
+
+			<button>
+				Click para borrar propiedad nombre
+			</button>
+		</div>
+
+	</body>
+</html>

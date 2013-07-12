@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sitio simple</title>
+
+		<style type="text/css">
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 10px;
+				border-style: solid;
+				padding: 80px;
+				width: 700px;
+			}
+
+			form {
+				border-style: solid;
+				border-color: blue;
+				padding: 20px;
+			}
+
+		</style>
+
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+		<script>
+			$(function() {;
+
+				//obtenemos el formulario usando jquery
+				var formulario = $("#formulario");
+
+				//escuchamos el evento submit
+				formulario.submit(function() {
+
+					//obtiene los datos del formulario name=valor
+					alert($("#formulario").serialize());
+					//se hace la peticion post
+					//el metodo regresa un objeto jquery XHR
+					
+					var jqXHR = $.post("procesa.txt", $("#formulario").serialize());
+
+					jqXHR.done(function(datosRespuesta) {
+
+						//actualizamos con la respuesta
+						alert("se envio la info!");
+						$('#resultado').html(datosRespuesta);
+
+					});
+
+					jqXHR.fail(function(datosRespuesta) {
+
+						//indicamos que ocurrio un error
+						alert("Ocurrio un error");
+
+					});
+
+					//detenemos el comportamiento por default de la forma
+					return false;
+
+				})
+				//en caso de que falle la peticion
+			})
+
+		</script>
+
+	</head>
+	<body>
+
+		<div >
+
+			<p>
+				seguro Social(este campo no se envia)
+				<input type="text" name="seguro" />
+			</p>
+
+			<form id="formulario" method="get" action="procesa.txt">
+
+				<p>
+					Nombre (ejemplo input text)
+					<input type="text" name="nombre" />
+				</p>
+
+				<p>
+					Password (ejemplo input password):
+					<input type="password" name="password">
+				</p>
+
+				<fieldset>
+					<legend>
+						Domicilio(ejemplo legend):
+					</legend>
+					Calle:
+					<input type="text" name="calle"/>
+					<br>
+					Colonia:
+					<input type="text" name="colonia"/>
+					<br>
+					Estado:
+					<input type="text" name="estado"/>
+				</fieldset>
+
+				<p>
+					Sexo (ejemplo radio button):
+					<br/>
+
+					<input type="radio" name="sexo" value="masculino" checked="checked">
+					Masculino
+
+					<input type="radio" name="sexo" value="femenino">
+					Femenino
+				</p>
+
+				<p>
+					Vehiculo (ejemplo checkbox)
+					<br/>
+
+					<input type="checkbox" name="vehiculo" value="Bicicleta">
+					Tengo bicicleta
+					<br>
+					<input type="checkbox" name="vehiculo" value="Coche" checked="checked">
+					Tengo coche
+				</p>
+
+				<p>
+					Auto preferido(ejemplo select):
+					<select>
+						<option name="autoFavorito" value="volvo">Volvo</option>
+						<option name="autoFavorito" value="saab">Saab</option>
+						<option name="autoFavorito" value="mercedes" selected="selected">Mercedes</option>
+						<option name="autoFavorito" value="audi">Audi</option>
+					</select>
+				</p>
+
+				<p>
+					Sugerencias(ejemplo textarea):
+					<textarea rows="5" cols="70" name="comentario" >Poner algun comentario aqui</textarea>
+				</p>
+
+				<input type="submit" value="Enviar(ejemplo submit)">
+
+			</form>
+
+		</div>
+
+		<div id="resultado">
+
+		</div>
+	</body>
+</html>
+

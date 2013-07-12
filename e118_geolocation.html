@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<meta charset="UTF-8" />
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 30px;
+				padding: 80px;
+				width: 600px;
+			}
+
+		</style>
+
+		<script>
+			function muestraPosicion(posicion) {
+
+				//obtenemos la latitud y la longitud del objeto
+				//construido por el API de localizacion
+				var latitud = posicion.coords.latitude;
+				var longitud = posicion.coords.longitude;
+
+				//obtenemos el parrafo donde vamos a mostrar estos resultados
+				var parrafo = document.querySelector("#demo");
+				parrafo.innerHTML = "Latitud: " + latitud + "<br>Longitud: " + longitud;
+
+			}
+
+
+			window.onload = function() {
+
+				//obtenemos el boton de abajo
+				var boton = document.querySelector("button");
+
+				//escuchamos el evento click del boton
+				boton.addEventListener("click", function() {
+
+					//checamos si el API de localizacion es soportado por este navegador
+					if (navigator.geolocation) {
+
+						//SI es soportado, obtenemos la posicion invocando a getCurrentPosition
+						navigator.geolocation.getCurrentPosition(muestraPosicion);
+					} else {
+
+						//NO ES SOPORTADO, entonces mostramos un mensaje para
+						//indicarle al usuario que su navegador no soporta geolocalizacion.
+						var parrafo = document.querySelector("#demo");
+						parrafo.innerHTML = "Este navegador no soporta geolocalizacion.";
+					}
+				});
+
+			}
+		</script>
+
+		<div>
+			<p id="demo">
+				Click en el boton para saber tus coordenadas
+			</p>
+			<button >
+				Obtener coordenadas
+			</button>
+		</div>
+	</body>
+</html>

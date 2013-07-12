@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sitio simple</title>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			div {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 30px;
+				padding: 80px;
+				width: 600px;
+			}
+
+		</style>
+
+		<script>
+			alert("nombre:" + sessionStorage.getItem("nombre") + ", curso:" + sessionStorage.getItem("curso"));
+
+			if ( typeof (Storage) !== "undefined") {
+				alert("el objeto Storage es soportado");
+			} else {
+				alert("el objeto Storage NO es soportado");
+			}
+
+			sessionStorage.setItem("nombre", "Ismael");
+			sessionStorage.setItem("curso", "HTML5");
+
+			window.onload = function() {
+
+				var boton = document.querySelector("button");
+				boton.addEventListener("click", function() {
+
+					//remueve el item nombre
+					sessionStorage.removeItem("nombre");
+
+					//borra todo
+					sessionStorage.clear();
+					alert("se ha borrado la propiedad nombre");
+				});
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<div id="respuesta">
+
+			<button>
+				Click para borrar propiedad nombre
+			</button>
+		</div>
+
+	</body>
+</html>
