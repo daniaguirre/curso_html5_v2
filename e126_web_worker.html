@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<meta charset="UTF-8" />
+		<style type="text/css">
+			body {
+				text-align: center;
+				font-size: 40px;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+
+				var cajaRespuesta = document.querySelector("#respuesta");
+
+				if (window.Worker) {
+
+					//obtenemos el codigo que va a ejecutar el web worker
+					var miWebWorker = new Worker("javascript/web_worker.js");
+
+					//le enviamos la cadena usuario al worker
+					//el worker la procesa y regresa esa cadena con el prefijo Hola
+					miWebWorker.postMessage("Usuario");
+
+					//escuchamos cuando el worker responde
+					miWebWorker.onmessage = function(evento) {
+						//obtenemos lo que respondio el web worker con evento.data
+						var mensaje = "El worker respondio: " + evento.data;
+
+						cajaRespuesta.innerHTML = mensaje;
+					};
+
+				} else {
+
+					cajaRespuesta.innerHTML = "Tu navegador no soporta web workers";
+
+				}
+
+			}
+
+		</script>
+
+		<div>
+
+			<div id="respuesta">
+
+			</div>
+		</div>
+	</body>
+</html>
