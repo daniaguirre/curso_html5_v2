@@ -22,7 +22,7 @@
 
 		</style>
 
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="javascript/jquery2.js"></script>
 
 		<script>
 			$(function() {;
@@ -38,7 +38,7 @@
 					//se hace la peticion post
 					//el metodo regresa un objeto jquery XHR
 					
-					var jqXHR = $.post("procesa.txt", $("#formulario").serialize());
+					var jqXHR = $.post("ajax/procesa.php", $("#formulario").serialize());
 
 					jqXHR.done(function(datosRespuesta) {
 
@@ -58,8 +58,7 @@
 					//detenemos el comportamiento por default de la forma
 					return false;
 
-				})
-				//en caso de que falle la peticion
+				})				
 			})
 
 		</script>
@@ -74,7 +73,7 @@
 				<input type="text" name="seguro" />
 			</p>
 
-			<form id="formulario" method="get" action="procesa.txt">
+			<form id="formulario" method="get" action="ajax/procesa.php">
 
 				<p>
 					Nombre (ejemplo input text)
