@@ -4,34 +4,34 @@
 		<meta charset="UTF-8" />
 		<title>Sitio simple</title>
 		<link rel="stylesheet" type="text/css" href="../mini-sitio/estilos.css" />
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="../javascript/jquery2.js"></script>
 		<script>
 			$(function() {
 
 				$("#principal").click(function() {
 
-					$('#contenedor').load('../ajax/index.txt');
+					$('#contenedor').load('../ajax/index.php');
 
 					return false;
 				});
 
 				$("#blog").click(function() {
 
-					$('#contenedor').load('../ajax/blog.txt');
+					$('#contenedor').load('../ajax/blog.php');
 
 					return false;
 				});
 				
 				$("#acerca").click(function() {
 
-					$('#contenedor').load('../ajax/acerca.txt');
+					$('#contenedor').load('../ajax/acerca.php');
 
 					return false;
 				});
 				
 				$("#fotos").click(function() {
 
-					$('#contenedor').load('../ajax/fotos.txt');
+					$('#contenedor').load('../ajax/fotos.php');
 
 					return false;
 				});

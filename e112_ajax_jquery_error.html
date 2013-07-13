@@ -20,23 +20,29 @@
 
 		</style>
 
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="javascript/jquery2.js"></script>
 
 		<script>
 			function solicitaTextoServidor() {
 				//sustituye el contenido del div respuesta
 				//por lo que regrese el servidor
-				$('#respuesta').load('ajax/respuesta_texto.txt');
+				$('#respuesta').load('ajax/respuesta_servidor.php', function(respuesta, estatus, xhr) {
+
+					//respueta contiene el texto que regresa el servidor
+					//estatus es un objeto que podemos consultar
+					if (estatus == "error") {
+						alert("ocurrio un error:" + xhr.status + " " + xhr.statusText);
+
+					}
+				});
 			}
 
 
-			window.onload = function() {
+			$(document).ready(function() {
 
-				var boton = document.querySelector("button");
-				boton.addEventListener("click", solicitaTextoServidor);
-			}
+				$("#boton").click(solicitaTextoServidor);
+			});
 			
-
 		</script>
 	</head>
 	<body>
@@ -45,7 +51,7 @@
 			<h2>Oprime el boton para cambiar este texto</h2>
 		</div>
 		<div>
-			<button>
+			<button id="boton">
 				Cambiar texto
 			</button>
 		</div>

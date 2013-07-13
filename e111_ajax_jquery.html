@@ -23,18 +23,26 @@
 		<script src="javascript/jquery2.js"></script>
 
 		<script>
-			function solicitaTextoServidor() {
+			var solicitaTextoServidor = function() {
 				//sustituye el contenido del div respuesta
 				//por lo que regrese el servidor
-				$('#respuesta').load('ajax/respuesta_texto.txt');
+				//$('#respuesta').load('ajax/respuesta_servidor.txt');
+				$('#respuesta').load('ajax/respuesta_servidor.php');
 			}
 
+			$(document).ready(function() {
 
-			window.onload = function() {
+				$("#boton").click(solicitaTextoServidor);
 
-				var boton = document.querySelector("button");
-				boton.addEventListener("click", solicitaTextoServidor);
-			}
+                //TAMBIEN PUEDE SER CON FUNCIONES ANONIMAS:
+                /*
+				$("#boton").click(function() {
+					  //$('#respuesta').load('ajax/respuesta_servidor.txt');
+				     $('#respuesta').load('ajax/respuesta_servidor.php');
+				});
+				*/
+			});
+			
 			
 
 		</script>
@@ -45,7 +53,7 @@
 			<h2>Oprime el boton para cambiar este texto</h2>
 		</div>
 		<div>
-			<button>
+			<button id="boton">
 				Cambiar texto
 			</button>
 		</div>

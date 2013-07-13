@@ -20,13 +20,14 @@
 
 		</style>
 
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="javascript/jquery2.js"></script>
 
 		<script>
 			var solicitaTextoServidor = function() {
 				//sustituye el contenido del div respuesta
 				//por lo que regrese el servidor
-				$('#respuesta').load('ajax/respuesta_texto.txt');
+				//$('#respuesta').load('ajax/respuesta_servidor.txt');
+				$('#respuesta').load('ajax/respuesta_servidor.php');
 				
 				//COMO ES UN ANCHOR tenemos que incluir el siguiente return
 				
